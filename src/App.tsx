@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/Header/Header';
+import Search from "./Components/Search/Search";
+import Products from "./Components/Products/Products";
+import ProductSlider from "./Components/ProductSlider/ProductSlider";
+import Benefits from "./Components/Benefits/Benefits";
+import Author from "./Components/Author/Author";
+import Tutorial from "./Components/Tutorial/Tutorial";
+import Footer from "./Components/Footer/Footer";
+import axios from 'axios'
+import {useSelector, useDispatch} from "react-redux";
+import {setClothes} from './redux/actions/clothes'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const dispatch = useDispatch()
+    // @ts-ignore
+
+
+    React.useEffect(() => {
+        axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/.json').then(({data}) => {
+            // setItems(data.pizzas)
+            dispatch(setClothes(data.pizzas))
+        })
+    }, [])
+    return (
+        <div className="wrapper">
+            <div className="content">
+                <Header/>
+                <Search/>
+                {/*//@ts-ignore*/}
+                <Products/>
+                <ProductSlider/>
+                <Benefits/>
+                <Author/>
+                <Tutorial/>
+            </div>
+           <Footer/>
+        </div>
+    );
 }
 
 export default App;

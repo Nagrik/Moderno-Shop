@@ -1,43 +1,44 @@
 import React from 'react'
-import pens from "../../img/tutorial/pens.jpg";
-import press from "../../img/tutorial/press.jpg";
-import css from "../../img/tutorial/css.jpg";
+import photo1 from "../../img/tutorial/1.jpg";
+import photo2 from "../../img/tutorial/2.jpg";
+import photo3 from "../../img/tutorial/3.png";
+
 
 export default function Tutorial(){
     return(
         <section className="tutorial">
             <div className="container">
                 <div className="tutorial__title title">
-                    Free Monthly Tutorials To Help You With Your Project
+                    Free Monthly To Help You With Your Project
                 </div>
 
                 <div className="tutorial__inner">
                     <div className="tutorial__item">
                         <div className="tutorial__tutorial__item-img">
-                            <img src={pens} alt=""/>
+                            <img src={photo1} alt="" className='tutorial__item-img'/>
                         </div>
                         <div className="tutorial__item-title">
-                            Web Design Tutorials
+                            Free trade
                         </div>
                     </div>
 
 
                     <div className="tutorial__item">
                         <div className="tutorial__tutorial__item-img">
-                            <img src={press} alt=""/>
+                            <img src={photo2} alt="" className='tutorial__item-img'/>
                         </div>
                         <div className="tutorial__item-title">
-                            WordPress Tutorials
+                            Free shipping
                         </div>
                     </div>
 
 
                     <div className="tutorial__item">
                         <div className="tutorial__tutorial__item-img">
-                            <img src={css} alt=""/>
+                            <img src={photo3} alt="" className='tutorial__item-img'/>
                         </div>
                         <div className="tutorial__item-title">
-                            HTML & CSS Tutorials
+                            Premium account
                         </div>
                     </div>
                 </div>

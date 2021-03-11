@@ -1,6 +1,6 @@
 //@ts-ignore
 const initialState = {
-    category: 0,
+    category: null,
     sortBy: ''
 }
 //@ts-ignore

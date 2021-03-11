@@ -1,20 +1,31 @@
 import React from 'react'
 import Categories from "./Categories/Categories";
-import ProductsItem from "./ProductsItem";
+import ProductsItem from "./ProductsItem/index";
 import {useDispatch, useSelector} from "react-redux";
 import {setCategory} from '../../redux/actions/filters'
+import {fetchClothes} from "../../redux/actions/clothes";
+import PlaceholderItems from "./ProductsItem/PlaceholderItems";
+
 
 // @ts-ignore
 export default function Products() {
     const dispatch = useDispatch()
 // @ts-ignore
     const items = useSelector(({clothes}) => clothes.items)
+    // @ts-ignore
+    const isLoaded = useSelector(({clothes}) => clothes.isLoaded)
 // @ts-ignore
+    const {category, sortBy} = useSelector(({filters}) => filters)
+
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index))
     },[])
+    React.useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchClothes())
+    }, [category])
 
-    const category = ['WordPress', 'Joomla', 'Plugins', 'Component', 'PSD']
+    const categoryNames = ['Hoodie', 'T-Short', 'Pants', 'Glasses']
     // @ts-ignore
     return (
         <section className="products">
@@ -28,15 +39,16 @@ export default function Products() {
                             {/*@ts-ignore*/}
                             <Categories
                                 //@ts-ignore
+                                activeCategory={category}
                                 onClickItem={onSelectCategory}
-                                category={category}/>
+                                categoryNames={categoryNames}/>
                         </div>
                         <div className="products__inner-box">
                             {/*@ts-ignore*/}
-                            {items.map((obj) => (
+                            {isLoaded ? items.map((obj) => (
                                 //@ts-ignore
-                                <ProductsItem key={obj.id} {...obj}/>
-                            ))}
+                                <ProductsItem key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))}
+
                         </div>
 
                     </div>

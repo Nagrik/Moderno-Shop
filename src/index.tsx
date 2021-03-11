@@ -5,8 +5,23 @@ import reportWebVitals from './reportWebVitals';
 import '../src/scss/style.scss'
 import store from "./redux/store";
 import {Provider} from 'react-redux'
+// import firebase from "firebase";
 
 
+
+// firebase.initializeApp(config);
+
+// Get a reference to the database service
+// var database = firebase.database();
+// // var admin = require('firebase-admin');
+// let userRef = database.ref('pizzas/')
+//
+// userRef.once('value', ((snapshot) => {
+//     snapshot.forEach((childSnapshot) => {
+//         console.log(childSnapshot.val().category)
+//
+//     });
+// }));
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={store}>

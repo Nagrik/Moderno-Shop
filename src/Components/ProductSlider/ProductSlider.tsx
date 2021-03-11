@@ -1,447 +1,63 @@
 import React from 'react'
+import {Carousel} from 'antd';
+import first from '../../img/Carousel/1.jpg'
+import {fetchClothesSliderOne, fetchClothesSliderTwo,fetchClothesSliderThird} from "../../redux/actions/clothes";
+import {useDispatch, useSelector} from "react-redux";
+import ProductSliderItem from './ProductSliderItemOne';
+import ProductsItem from "../Products/ProductsItem";
+import ProductSliderItemOne from "./ProductSliderItemOne";
+import ProductSliderItemTwo from "./ProductSliderItemTwo";
+import ProductSliderItemThird from "./ProductSliderItemThird";
 
-export default function ProductSlider(){
-    return(
+
+export default function ProductsSlider() {
+    const dispatch = useDispatch()
+    // @ts-ignore
+    const sliderItemsOne = useSelector(({clothes}) => clothes.sliderOne)
+    React.useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchClothesSliderOne())
+    }, [])
+
+
+    // @ts-ignore
+    const sliderItemsTwo = useSelector(({clothes}) => clothes.sliderTwo)
+    React.useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchClothesSliderTwo())
+    }, [])
+
+
+    // @ts-ignore
+    const sliderItemsThird = useSelector(({clothes}) => clothes.sliderThird)
+    React.useEffect(() => {
+        // @ts-ignore
+        dispatch(fetchClothesSliderThird())
+    }, [])
+
+
+
+    return (
         <section className="product-slider">
             <div className="product-slider__wrapper">
                 <div className="container-fluid">
                     <div className="product-slider__title title">
                         This Week Trending Products
                     </div>
-                    <div className="product-slider__inner">
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
+                    <Carousel>
+                        <div className='CarouselTest'>
+                            {/*@ts-ignore*/}
+                            {sliderItemsOne.map((obj)  => <ProductSliderItemOne key={Math.random()} {...obj}/>)}
                         </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
+                        <div className='CarouselTest'>
+                            {/*@ts-ignore*/}
+                            {sliderItemsTwo.map((obj)  => <ProductSliderItemTwo key={Math.random()} {...obj}/>)}
                         </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
+                        <div className='CarouselTest'>
+                            {/*@ts-ignore*/}
+                            {sliderItemsThird.map((obj)  => <ProductSliderItemThird key={Math.random()} {...obj}/>)}
                         </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img"/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                        <div className="product__item">
-                            <a href="#" className="product__item-img style="/>
-                            <div className="product__item-content">
-                                <div className="product__item-name">
-                                    <a href="#" className="product__item-title">
-                                        Responsive Mobile APP
-                                    </a>
-                                    <a className="product__item-category" href="#">
-                                        Site Template
-                                    </a>
-                                </div>
-                                <div className="product__item-price">
-                                    $19
-                                </div>
-                            </div>
-
-                            <div className="product__item-info">
-                                <a className="product__item-author" href="#">
-                                    <div className="avatar"/>
-                                    <span>Rad</span>
-                                </a>
-                                <div className="product__item-star">
-                                    <div className="rate-star"/>
-                                    (05)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </Carousel>
                 </div>
             </div>
         </section>

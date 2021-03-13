@@ -1,15 +1,19 @@
-//@ts-ignore
-const initialState = {
+
+type InitialStateType = {
+    category: null | string,
+    sortBy: string
+}
+
+const initialState: InitialStateType = {
     category: null,
     sortBy: ''
 }
-//@ts-ignore
-export const filtersReducer = (state = initialState, action) => {
+export const filtersReducer = (state = initialState, action:any):InitialStateType => {
     switch (action.type) {
         case "SET_SORT_BY":{
             return {
                 ...state,
-                sortBy: action.payload
+                sortBy: action.payload,
             }
         }
         case "SET_CATEGORY": {

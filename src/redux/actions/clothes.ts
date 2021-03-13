@@ -6,8 +6,7 @@ export const setLoaded = (payload:boolean) => ({
     payload
 })
 
-// @ts-ignore
-export const setClothes = items => ({
+export const setClothes = (items:Object) => ({
     type:'SET_CLOTHES',
     payload:items
 
@@ -22,8 +21,7 @@ export const fetchClothes = () => (dispatch:any) =>  {
 }
 
 
-// @ts-ignore
-export const setClothesSliderOne = items => ({
+export const setClothesSliderOne = (items:Object) => ({
     type:'SET_CLOTHES_SLIDER_ONE',
     payload:items
 
@@ -35,8 +33,7 @@ export const fetchClothesSliderOne = () => (dispatch:any) =>  {
         dispatch(setClothesSliderOne(data))
     })
 }
-// @ts-ignore
-export const setClothesSliderTwo = items => ({
+export const setClothesSliderTwo = (items:Object) => ({
     type:'SET_CLOTHES_SLIDER_TWO',
     payload:items
 
@@ -48,8 +45,7 @@ export const fetchClothesSliderTwo = () => (dispatch:any) =>  {
         dispatch(setClothesSliderTwo(data))
     })
 }
-// @ts-ignore
-export const setClothesSliderThird = items => ({
+export const setClothesSliderThird = (items:Object) => ({
     type:'SET_CLOTHES_SLIDER_THIRD',
     payload:items
 

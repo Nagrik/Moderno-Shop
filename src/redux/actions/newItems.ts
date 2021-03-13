@@ -4,8 +4,7 @@ export const setLoaded = (payload:boolean) => ({
     payload
 })
 
-// @ts-ignore
-export const setProductsAsideItems = items => ({
+export const setProductsAsideItems = (items:Object) => ({
     type:'SET_PRODUCTS_ASIDE_ITEMS',
     payload:items
 
@@ -17,8 +16,8 @@ export const fetchProductsAsideItems = () => (dispatch:any) =>  {
         dispatch(setProductsAsideItems(data))
     })
 }
-// @ts-ignore
-export const setProductsItems = items => ({
+
+export const setProductsItems = (items:Object) => ({
     type:'SET_PRODUCTS_ITEMS',
     payload:items
 

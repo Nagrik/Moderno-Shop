@@ -83,7 +83,6 @@ export default function NewItemPage() {
 
             </div>
         </div>
-        <Footer/>
         </div>
     )
 }

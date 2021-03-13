@@ -19,7 +19,8 @@ function RateStars({rating}) {
         // @ts-ignore
         return (
             <span>
-        <Rate tooltips={desc} onChange={handleChange} value={value} />
+        <Rate tooltips={desc} onChange={handleChange} value={value} className='stars'
+         />
                 {/*{value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}*/}
       </span>
         );

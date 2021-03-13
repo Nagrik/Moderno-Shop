@@ -1,13 +1,19 @@
-//@ts-ignore
-const initialState = {
+type InitialStateType = {
+    items: Array<any>,
+    isLoaded: boolean,
+    sliderOne: Array<any>,
+    sliderTwo: Array<any>,
+    sliderThird: Array<any>
+}
+
+const initialState:InitialStateType = {
     items: [],
     isLoaded: false,
     sliderOne:[],
     sliderTwo:[],
     sliderThird:[],
 }
-//@ts-ignore
-export const clothesReducer = (state = initialState, action) => {
+export const clothesReducer = (state = initialState, action:any):InitialStateType => {
     switch (action.type) {
         case "SET_CLOTHES":
             return {

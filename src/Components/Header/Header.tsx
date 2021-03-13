@@ -16,7 +16,7 @@ export default function Header(){
 
                     <div className="header__top-inner">
                         <div className="header__logo">
-                            <NavLink to='/HomePage'>
+                            <NavLink to='/Home'>
                                 <img src={logo} alt="Logo" width="150" height="50"/>
                             </NavLink>
                         </div>
@@ -198,8 +198,8 @@ export default function Header(){
                         <ul className="menu__list">
                             <li><a href="../public/404.html">404</a></li>
                             <li><a href="../public/about.html">About</a></li>
-                            <li><NavLink to="/NewItem">New Products</NavLink></li>
-                            <li><a href="../public/product-one.html">product-one</a></li>
+                            <li><NavLink to="/Products">New Products</NavLink></li>
+                            <li><NavLink to="/Product">Product</NavLink></li>
                             <li><a href="../public/profile.html">profile</a></li>
                             <li><a href="../public/settings.html">settings</a></li>
                             <li><a href="../public/upload.html">upload</a></li>

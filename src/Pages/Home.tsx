@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from "../Components/Header/Header";
 import Search from "../Components/Search/Search";
 import Products from "../Components/Products/Products";
 import ProductSlider from "../Components/ProductSlider/ProductSlider";
 import Benefits from "../Components/Benefits/Benefits";
 import Author from "../Components/Author/Author";
 import Tutorial from "../Components/Tutorial/Tutorial";
-import Footer from "../Components/Footer/Footer";
 
 export default function HomePage(){
     return(
@@ -19,7 +17,6 @@ export default function HomePage(){
                 <Author/>
                 <Tutorial/>
             </div>
-            <Footer/>
         </div>
     )
 }

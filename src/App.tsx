@@ -7,21 +7,17 @@ import Benefits from "./Components/Benefits/Benefits";
 import Author from "./Components/Author/Author";
 import Tutorial from "./Components/Tutorial/Tutorial";
 import Footer from "./Components/Footer/Footer";
+import HomePage from "./Pages/Home";
+import NewItemPage from "./Pages/NewItemPage";
 
 
 function App() {
     return (
         <div className="wrapper">
             <div className="content">
-                <Header/>
-                <Search/>
-                <Products/>
-                <ProductSlider/>
-                <Benefits/>
-                <Author/>
-                <Tutorial/>
+                <HomePage/>
+                <NewItemPage/>
             </div>
-           <Footer/>
         </div>
     );
 }

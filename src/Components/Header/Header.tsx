@@ -6,6 +6,7 @@ import mess3 from "../../img/basket/mass3.jpg";
 import bassket from "../../img/basket/basket_git.png";
 import bassketTelegram from "../../img/basket/basket_telegram.png";
 import userPro from "../../img/user-pro.jpg";
+import { NavLink } from 'react-router-dom';
 
 export default function Header(){
     return(
@@ -15,7 +16,9 @@ export default function Header(){
 
                     <div className="header__top-inner">
                         <div className="header__logo">
-                            <a href="../../public/index.html"><img src={logo} alt="Logo" width="150" height="50"/></a>
+                            <NavLink to='/HomePage'>
+                                <img src={logo} alt="Logo" width="150" height="50"/>
+                            </NavLink>
                         </div>
 
                         <div className="header__text">
@@ -195,7 +198,7 @@ export default function Header(){
                         <ul className="menu__list">
                             <li><a href="../public/404.html">404</a></li>
                             <li><a href="../public/about.html">About</a></li>
-                            <li><a href="../public/new-items.html">new-items</a></li>
+                            <li><NavLink to="/NewItem">New Products</NavLink></li>
                             <li><a href="../public/product-one.html">product-one</a></li>
                             <li><a href="../public/profile.html">profile</a></li>
                             <li><a href="../public/settings.html">settings</a></li>

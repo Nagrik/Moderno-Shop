@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from "../Components/Header/Header";
 import BreadCrumbs from "../Components/NewItemComponents/BreadCrumbs";
 import Aside from "../Components/NewItemComponents/Aside/Aside";
 import Footer from "../Components/Footer/Footer";
@@ -10,22 +9,31 @@ import NewProductItem from "../Components/NewItemComponents/ProductItem";
 import OpenProductItems from "../Components/NewItemComponents/OpenProductsItem";
 
 export default function NewItemPage() {
+    const [list, setList] = React.useState(false);
     const dispatch = useDispatch()
     //@ts-ignore
     const items = useSelector(({aside}) => aside.mainItems)
-    console.log(items)
     //@ts-ignore
     const isLoaded = useSelector(({aside}) => aside.isLoaded)
+    console.log(list)
 
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchProductsItems())
     }, [])
+
+    const listChangeHandler = () => {
+        setList(true)
+    }
+    const listChangeHandlerBack = () => {
+        setList(false)
+    }
+
+
     return (
         <div>
         <div className="wrapper">
             <div className="content page-content">
-                <Header/>
                 <BreadCrumbs/>
                 <section className="product-page">
                     <div className="container">
@@ -42,16 +50,23 @@ export default function NewItemPage() {
                                         <button className="icon-move-vertical-alt1 "/>
                                     </div>
                                     <div>
-                                        <button className="icon-table active"/>
-                                        <button className="icon-list "/>
+                                        <button className="icon-table active" onClick={listChangeHandlerBack}/>
+                                        {/*@ts-ignore*/}
+                                        <button className="icon-list" onClick={listChangeHandler}/>
                                     </div>
                                 </div>
                                 <div className="product-page__items">
 
                                 {/*@ts-ignore*/}
-                                {isLoaded ? items.map((obj) => (
-                                    //@ts-ignore
-                                    <NewProductItem key={Math.random()} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))}
+                                    {list ? items.map((obj) => (
+                                            //@ts-ignore
+                                            <OpenProductItems key={Math.random()} {...obj} />)) :
+                                        //@ts-ignore
+                                        isLoaded ? items.map((obj) => (
+                                            //@ts-ignore
+                                            <NewProductItem key={Math.random()} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))
+                                    }
+
                                 </div>
                                 <div className="pagination">
                                     <ul className="pagination__list">
@@ -61,7 +76,6 @@ export default function NewItemPage() {
                                         <li><a href="#">4</a></li>
                                     </ul>
                                 </div>
-                                {/*<OpenProductItems/>*/}
                             </div>
                         </div>
                     </div>

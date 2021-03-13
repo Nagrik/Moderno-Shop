@@ -12,7 +12,6 @@ export default function HomePage(){
     return(
         <div className="wrapper">
             <div className="content">
-                <Header/>
                 <Search/>
                 <Products/>
                 <ProductSlider/>

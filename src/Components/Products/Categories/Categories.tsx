@@ -1,18 +1,21 @@
 import React from 'react'
-// @ts-ignore
-const Categories = React.memo( function Categories({categoryNames, onClickItem, activeCategory}) {
 
-    // @ts-ignore
+type PropsType = {
+    categoryNames:Array<any>,
+    onClickItem:any
+    activeCategory:any
+}
+const Categories = React.memo( function Categories(props:PropsType) {
+
 
 
     return (
         <div>
-                <button className={activeCategory === null ? 'activeCategories' : ''}
-                onClick={() => onClickItem(null)}>All</button>
-                {categoryNames.map((name:string, index:number) => (
-                    <button className={activeCategory === index ? 'activeCategories' : ''}
-                        // @ts-ignore
-                    onClick={() => onClickItem(index)} key={`${name}_${index}`}>
+                <button className={props.activeCategory === null ? 'activeCategories' : ''}
+                onClick={() => props.onClickItem(null)}>All</button>
+                {props.categoryNames.map((name:string, index:number) => (
+                    <button className={props.activeCategory === index ? 'activeCategories' : ''}
+                    onClick={() => props.onClickItem(index)} key={`${name}_${index}`}>
                         {name}
                     </button>
                 ))}

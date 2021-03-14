@@ -1,22 +1,24 @@
 import React from 'react'
-import image from '../../img/tutorial/css.jpg'
 import user from '../../img/user.jpg'
 import RateStars from "../Products/RateStars";
 import {HeartOutlined, MessageOutlined} from '@ant-design/icons';
 
-//@ts-ignore
-export default function OpenProductItems({imageUrl, name, category}) {
+export interface IsProps  {
+    imageUrl:string; name:string; category:string
+}
+
+export default function OpenProductItems(props:IsProps) {
     return (
         <div className='ProductsWrapper'>
             <div>
-                <img src={imageUrl} className='ProductsItemImage'/>
+                <img src={props.imageUrl} className='ProductsItemImage' alt='123'/>
             </div>
             <div className='Wrapper'>
                 <div className='ContentWrapper'>
                     <div className='Content__top'>
                         <div className='Content__top-text'>
-                            <div className='Content__title'>{name}</div>
-                            <div className='Content__subtitle'>{category}</div>
+                            <div className='Content__title'>{props.name}</div>
+                            <div className='Content__subtitle'>{props.category}</div>
                         </div>
                         <div className='Price'>$19</div>
                     </div>
@@ -27,11 +29,10 @@ export default function OpenProductItems({imageUrl, name, category}) {
                 </div>
                 <div className='bottom__content'>
                     <div className='UserStat'>
-                        <img src={user}/>
+                        <img src={user} alt='123'/>
                         <div>Rad</div>
                     </div>
                     <div className='Stat'>
-                        {/*@ts-ignore*/}
                         <RateStars rating={5}/>
                         <MessageOutlined/> (20)
                         <HeartOutlined/> (10)

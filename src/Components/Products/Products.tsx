@@ -6,16 +6,22 @@ import {setCategory} from '../../redux/actions/filters'
 import {fetchClothes} from "../../redux/actions/clothes";
 import PlaceholderItems from "./ProductsItem/PlaceholderItems";
 
+interface RootState {
+    clothes:any
+    items:Array<object>
+    isLoaded:boolean
+    filters: any
+}
+const selectClothes = ({clothes}:RootState) => clothes.items
+const selectLoading = ({clothes}:RootState) => clothes.isLoaded
+const selectFilters = ({filters}:RootState) => filters
 
-// @ts-ignore
 export default function Products() {
     const dispatch = useDispatch()
-// @ts-ignore
-    const items = useSelector(({clothes}) => clothes.items)
-    // @ts-ignore
-    const isLoaded = useSelector(({clothes}) => clothes.isLoaded)
-// @ts-ignore
-    const {category, sortBy} = useSelector(({filters}) => filters)
+    
+    const items = useSelector(selectClothes)
+    const isLoaded = useSelector(selectLoading)
+    const {category} = useSelector(selectFilters)
 
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index))
@@ -26,7 +32,6 @@ export default function Products() {
     }, [category])
 
     const categoryNames = ['Hoodie', 'T-Short', 'Pants', 'Glasses']
-    // @ts-ignore
     return (
         <section className="products">
             <div className="products__wrapper">
@@ -36,16 +41,13 @@ export default function Products() {
                     </div>
                     <div className="products__inner">
                         <div className="products__inner-btn">
-                            {/*@ts-ignore*/}
                             <Categories
-                                //@ts-ignore
                                 activeCategory={category}
                                 onClickItem={onSelectCategory}
                                 categoryNames={categoryNames}/>
                         </div>
                         <div className="products__inner-box">
-                            {/*@ts-ignore*/}
-                            {isLoaded ? items.map((obj) => (
+                            {isLoaded ? items.map((obj:object) => (
                                 //@ts-ignore
                                 <ProductsItem key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))}
 

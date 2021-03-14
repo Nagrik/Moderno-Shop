@@ -1,35 +1,43 @@
 import React from 'react'
 import {Carousel} from 'antd';
-import first from '../../img/Carousel/1.jpg'
 import {fetchClothesSliderOne, fetchClothesSliderTwo,fetchClothesSliderThird} from "../../redux/actions/clothes";
 import {useDispatch, useSelector} from "react-redux";
-import ProductSliderItem from './ProductSliderItemOne';
-import ProductsItem from "../Products/ProductsItem";
 import ProductSliderItemOne from "./ProductSliderItemOne";
 import ProductSliderItemTwo from "./ProductSliderItemTwo";
 import ProductSliderItemThird from "./ProductSliderItemThird";
 
 
 export default function ProductsSlider() {
+
     const dispatch = useDispatch()
-    // @ts-ignore
-    const sliderItemsOne = useSelector(({clothes}) => clothes.sliderOne)
+
+    type RootState = {
+        clothes:any,
+        sliderOne:any,
+        sliderTwo:any,
+        sliderThree:any,
+    }
+
+    const selectClothesOne = ({clothes}:RootState) => clothes.sliderOne
+    const sliderItemsOne = useSelector(selectClothesOne)
+
+    const selectClothesTwo = ({clothes}:RootState) => clothes.sliderTwo
+    const sliderItemsTwo = useSelector(selectClothesTwo)
+
+    const selectClothesThree = ({clothes}:RootState) => clothes.sliderThird
+    const sliderItemsThree = useSelector(selectClothesThree)
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchClothesSliderOne())
     }, [])
 
 
-    // @ts-ignore
-    const sliderItemsTwo = useSelector(({clothes}) => clothes.sliderTwo)
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchClothesSliderTwo())
     }, [])
 
 
-    // @ts-ignore
-    const sliderItemsThird = useSelector(({clothes}) => clothes.sliderThird)
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchClothesSliderThird())
@@ -46,16 +54,13 @@ export default function ProductsSlider() {
                     </div>
                     <Carousel>
                         <div className='CarouselTest'>
-                            {/*@ts-ignore*/}
-                            {sliderItemsOne.map((obj)  => <ProductSliderItemOne key={Math.random()} {...obj}/>)}
+                            {sliderItemsOne.map((obj:any)  => <ProductSliderItemOne key={Math.random()} {...obj}/>)}
                         </div>
                         <div className='CarouselTest'>
-                            {/*@ts-ignore*/}
-                            {sliderItemsTwo.map((obj)  => <ProductSliderItemTwo key={Math.random()} {...obj}/>)}
+                            {sliderItemsTwo.map((obj:any)  => <ProductSliderItemTwo key={Math.random()} {...obj}/>)}
                         </div>
                         <div className='CarouselTest'>
-                            {/*@ts-ignore*/}
-                            {sliderItemsThird.map((obj)  => <ProductSliderItemThird key={Math.random()} {...obj}/>)}
+                            {sliderItemsThree.map((obj:any)  => <ProductSliderItemThird key={Math.random()} {...obj}/>)}
                         </div>
                     </Carousel>
                 </div>

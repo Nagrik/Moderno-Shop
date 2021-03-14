@@ -1,22 +1,25 @@
 import React from 'react'
-import first from "../../img/Carousel/1.jpg";
 
-// @ts-ignore
-export default function ProductSliderItemOne({imageUrl, name}){
-    const [image, setImage] = React.useState([1,2,3]);
+
+type PropTypes = {
+    imageUrl:string,
+    name:string,
+    id:number
+}
+export default function ProductSliderItemOne(props:PropTypes){
     return(
         <div className="product-slider__inner">
             <div className="product__item">
                 <a className="product__item-img" href="/">
-            <img src={imageUrl} alt='123' className='product__item-img'/>
+            <img src={props.imageUrl} alt='123' className='product__item-img'/>
                 </a>
                 <div className="product__item-content">
                     <div className="product__item-name">
                         <a className="product__item-title" href="/">
-                            {name}
+                            {props.name}
                         </a>
                         <a className="product__item-category" href="/">
-                            {name}
+                            {props.name}
                         </a>
                     </div>
                     <div className="product__item-price">

@@ -1,21 +1,24 @@
 import React from 'react'
 import RateStars from "../Products/RateStars";
 
-// @ts-ignore
-export default function NewProductItem({imageUrl, name,category}){
+export interface IsProps  {
+    imageUrl:string; name:string; category:string
+}
+
+export default function NewProductItem(props:  IsProps){
     return(
 
             <div className="product__item">
                 <a href="#" className="product__item-img">
-                    <img src={imageUrl} alt='' className='product__item-img'/>
+                    <img src={props.imageUrl} alt='' className='product__item-img'/>
                 </a>
                 <div className="product__item-content">
                     <div className="product__item-name">
                         <a href="#" className="product__item-title">
-                            {name}
+                            {props.name}
                         </a>
                         <a className="product__item-category" href="#">
-                            {category}
+                            {props.category}
                         </a>
                         <div className="product__item-text">
                             Pimply dummy text of the printing and typesetting industry.
@@ -34,7 +37,6 @@ export default function NewProductItem({imageUrl, name,category}){
                         <span>Rad</span>
                     </a>
                     <div className="product__item-star">
-                        {/*@ts-ignore*/}
                         <RateStars rating={5}/>
                     </div>
                     <div className="product__item-list">

@@ -1,27 +1,26 @@
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import 'antd/dist/antd.css';
 import { Rate } from 'antd';
 
 const desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
 
-// @ts-ignore
-function RateStars({rating}) {
-    // @ts-ignore
-    const [value, setValue] = React.useState(rating)
+type PropsType = {
+    rating: number
+}
+
+function RateStars(props:PropsType) {
+
+    const [value, setValue] = React.useState(props.rating)
 
 
-    // @ts-ignore
-    const handleChange = value => {
+    const handleChange = (value:number) => {
         setValue(value)
     };
 
-        // @ts-ignore
         return (
             <span>
         <Rate tooltips={desc} onChange={handleChange} value={value} className='stars'
          />
-                {/*{value ? <span className="ant-rate-text">{desc[value - 1]}</span> : ''}*/}
       </span>
         );
     }

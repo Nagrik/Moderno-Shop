@@ -1,7 +1,6 @@
 import React from 'react'
 import BreadCrumbs from "../Components/NewItemComponents/BreadCrumbs";
 import Aside from "../Components/NewItemComponents/Aside/Aside";
-import Footer from "../Components/Footer/Footer";
 import {fetchProductsItems} from "../redux/actions/newItems";
 import {useDispatch, useSelector} from "react-redux";
 import PlaceholderItems from "../Components/Products/ProductsItem/PlaceholderItems";
@@ -11,11 +10,17 @@ import OpenProductItems from "../Components/NewItemComponents/OpenProductsItem";
 export default function NewItemPage() {
     const [list, setList] = React.useState(false);
     const dispatch = useDispatch()
-    //@ts-ignore
-    const items = useSelector(({aside}) => aside.mainItems)
-    //@ts-ignore
-    const isLoaded = useSelector(({aside}) => aside.isLoaded)
-    console.log(list)
+
+    type RootState = {
+        aside:any,
+        mainItems:object,
+        isLoaded:boolean
+    }
+    const selectAside = ({aside}:RootState) => aside.mainItems
+    const selectLoaded = ({aside}:RootState) => aside.isLoaded
+
+    const items = useSelector(selectAside)
+    const isLoaded = useSelector(selectLoaded)
 
     React.useEffect(() => {
         // @ts-ignore
@@ -51,22 +56,17 @@ export default function NewItemPage() {
                                     </div>
                                     <div>
                                         <button className="icon-table active" onClick={listChangeHandlerBack}/>
-                                        {/*@ts-ignore*/}
                                         <button className="icon-list" onClick={listChangeHandler}/>
                                     </div>
                                 </div>
                                 <div className="product-page__items">
 
-                                {/*@ts-ignore*/}
-                                    {list ? items.map((obj) => (
-                                            //@ts-ignore
+                                    {list ? items.map((obj:any) => (
                                             <OpenProductItems key={Math.random()} {...obj} />)) :
-                                        //@ts-ignore
-                                        isLoaded ? items.map((obj) => (
-                                            //@ts-ignore
+                                        isLoaded ? items.map((obj:any) => (
                                             <NewProductItem key={Math.random()} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))
                                     }
-
+7
                                 </div>
                                 <div className="pagination">
                                     <ul className="pagination__list">

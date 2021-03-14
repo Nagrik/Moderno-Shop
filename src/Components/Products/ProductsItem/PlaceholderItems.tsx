@@ -10,7 +10,6 @@ export default function PlaceholderItems(){
             viewBox="0 0 300 420"
             backgroundColor="#d6d6d6"
             foregroundColor="#ecebeb"
-            // @ts-ignore
         >
             <rect x="-6" y="0" rx="0" ry="0" width="250" height="250" />
             <rect x="1" y="261" rx="0" ry="0" width="170" height="25" />

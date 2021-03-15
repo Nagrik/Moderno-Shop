@@ -6,3 +6,8 @@ export const setCategory = (catIndex:number) => ({
     type:"SET_CATEGORY",
     payload: catIndex
 })
+
+export const setCategoryTab = (catIndex:number) => ({
+    type:"SET_CATEGORY_TAB",
+    payload: catIndex
+})

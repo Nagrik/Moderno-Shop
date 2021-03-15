@@ -1,4 +1,5 @@
 import React from 'react'
+import Seller from '../../img/ava.jpg'
 
 export default function ProductAside(){
     return(
@@ -9,12 +10,6 @@ export default function ProductAside(){
                 </div>
                 <div className="price__box">
                     <div className="price__product">$59.00</div>
-                    <form>
-                        <select>
-                            <option>Regular</option>
-                            <option>Premium</option>
-                        </select>
-                    </form>
                 </div>
 
                 <button className="icon-shopping-basket">Add to Cart</button>
@@ -30,10 +25,10 @@ export default function ProductAside(){
 
                 <div className="product-author__box">
                     <div className="author__avatar">
-                        <img src="img/psdBossr.jpg" alt=""/>
+                        <img src={Seller} alt="" className='author__avatar'/>
                     </div>
                     <div className="author__info">
-                        <div className="author__name">PsdBoss</div>
+                        <div className="author__name">Roman Nahryshko</div>
                         <a className="author-info__link" href="#">View Profile</a>
                     </div>
                 </div>

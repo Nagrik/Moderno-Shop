@@ -1612,6 +1612,7 @@ button.icon-move-vertical-alt1 {
 
 .icon-facebook {
   background-color: #6370b6;
+  margin-right: 3px;
 }
 
 .icon-pinterest {
@@ -1739,9 +1740,11 @@ button.icon-move-vertical-alt1 {
 }
 
 .price__product {
-  font-size: 22px;
+  font-size: 26px;
   @include f500;
-  color: $red;
+  color: grey;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .product__price {
@@ -1782,6 +1785,11 @@ button.icon-move-vertical-alt1 {
 }
 
 .author__avatar {
+  width: 100px;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   margin-right: 14px;
 
 }
@@ -2965,6 +2973,19 @@ button.icon-move-vertical-alt1 {
   background: white;
   padding: 0 30px;
   padding-top: 20px;
+}
+
+.angle-right::before{
+  color: #000;
+}
+
+
+
+.productmini_info{
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+  align-items: center;
 }
 
 

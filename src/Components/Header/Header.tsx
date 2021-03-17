@@ -200,8 +200,8 @@ export default function Header(){
                             <li><a href="../public/about.html">About</a></li>
                             <li><NavLink to="/Products">New Products</NavLink></li>
                             <li><NavLink to="/Product">Product</NavLink></li>
-                            <li><a href="../public/profile.html">profile</a></li>
-                            <li><a href="../public/settings.html">settings</a></li>
+                            <li><NavLink to="/Profile">Profile</NavLink></li>
+                            <li><NavLink to="/Settings">Settings</NavLink></li>
                             <li><a href="../public/upload.html">upload</a></li>
                             <li><a href="../public/withdrawals.html">withdrawals</a></li>
                             <li><a href="#">Contact</a></li>

@@ -2,7 +2,7 @@ import React from 'react'
 import {Breadcrumb} from "antd";
 import { NavLink } from 'react-router-dom';
 
-export default function BreadCrumbsProduct(){
+export default function BreadCrumbsProfile(){
     return(
         <div className="breadcrumbs">
             <div className="container">
@@ -10,12 +10,12 @@ export default function BreadCrumbsProduct(){
                     <ul className="breadcrumbs__list">
                         <div>
                             <Breadcrumb>
-                                <Breadcrumb.Item>Home</Breadcrumb.Item>
                                 <Breadcrumb.Item>
-                                    <NavLink to="/Products">Products</NavLink>
+                                    <NavLink to='/Home'>Home</NavLink>
                                 </Breadcrumb.Item>
+
                                 <Breadcrumb.Item>
-                                    Product
+                                   Profile
                                 </Breadcrumb.Item>
                             </Breadcrumb>
                         </div>

@@ -2446,7 +2446,7 @@ button.icon-move-vertical-alt1 {
 
 }
 
-.personal-box__item-line {
+.personal-box__item-line-first {
   height: 15px;
   background-color: #f4f4f4;
   border-radius: 3px;
@@ -2456,7 +2456,36 @@ button.icon-move-vertical-alt1 {
     display: block;
     border-radius: 3px;
     height: 15px;
-    background-color: $green;
+    background-color: grey;
+    max-width: 80%;
+  }
+}
+.personal-box__item-line-second {
+  height: 15px;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+  margin-bottom: 23px;
+
+  span {
+    display: block;
+    border-radius: 3px;
+    height: 15px;
+    background-color: grey;
+    max-width: 50%;
+  }
+}
+.personal-box__item-line-third {
+  height: 15px;
+  background-color: #f4f4f4;
+  border-radius: 3px;
+  margin-bottom: 23px;
+
+  span {
+    display: block;
+    border-radius: 3px;
+    height: 15px;
+    background-color: grey;
+    max-width: 100%;
   }
 }
 
@@ -2987,6 +3016,87 @@ button.icon-move-vertical-alt1 {
   width: 45%;
   align-items: center;
 }
+
+
+.ProfileTabs{
+  display: flex;
+  justify-content: start;
+}
+
+.Settings{
+  //display: flex;
+  //background: white;
+  //flex-direction: column;
+}
+
+.InputItem{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.SettingsForm{
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+
+.FieldSettings{
+  max-width: 540px;
+  width: 100%;
+  background-color: #f9f9f9;
+  color: black;
+  border: 1px solid #dedede;
+  padding: 10px;
+}
+
+.settings-title{
+  border-bottom: 1px solid #dedede;
+  padding: 18px 34px;
+  font-weight: 500;
+  color: #263238;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.settings-button{
+  width: 150px;
+  height: 45px;
+  background-color: grey;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+}
+.settings-button-disabled{
+  width: 150px;
+  height: 45px;
+  background-color: #c3b6b6;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  opacity: 0.5;
+
+}
+
+.settings-button-wrapper{
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.error{
+  color: red;
+  position: absolute;
+  right: -100px;
+}
+
+
+
+
 
 
 @import '_media';

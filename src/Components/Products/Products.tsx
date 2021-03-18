@@ -5,6 +5,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCategory} from '../../redux/actions/filters'
 import {fetchClothes} from "../../redux/actions/clothes";
 import PlaceholderItems from "./ProductsItem/PlaceholderItems";
+import { NavLink } from 'react-router-dom';
+import {log} from "util";
 
 interface RootState {
     clothes:any
@@ -50,7 +52,6 @@ export default function Products() {
                             {isLoaded ? items.map((obj:object) => (
                                 //@ts-ignore
                                 <ProductsItem key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))}
-
                         </div>
 
                     </div>

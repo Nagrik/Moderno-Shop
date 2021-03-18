@@ -1,7 +1,8 @@
 import React from 'react'
 import Seller from '../../img/ava.jpg'
 
-export default function ProductAside(){
+export default function ProductAside({onCLickAddClothes, clothesItems}:any,){
+    console.log(clothesItems)
     return(
         <div className="product-one__aside">
             <div className="aside__item product__price">
@@ -9,10 +10,10 @@ export default function ProductAside(){
                     Product Price
                 </div>
                 <div className="price__box">
-                    <div className="price__product">$59.00</div>
+                    <div className="price__product">{clothesItems.price} $</div>
                 </div>
 
-                <button className="icon-shopping-basket">Add to Cart</button>
+                <button onClick={() => onCLickAddClothes } className="icon-shopping-basket">Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
                 <button>Buy Now</button>
 

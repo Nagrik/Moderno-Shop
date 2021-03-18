@@ -1,5 +1,6 @@
 import React from 'react'
 import RateStars from "../RateStars";
+import {NavLink} from "react-router-dom";
 
 
 type PropsType = {
@@ -7,18 +8,19 @@ type PropsType = {
     imageUrl: string,
     price: number,
     rating: number
+    id:number
 }
 export default function ProductsItem(props: PropsType) {
 
     return (
         <div className="product__item mix category-all" data-order="1">
-            <a href="#">
-                <img
+            <NavLink to={'/Product/'+ props.id}>
+            <img
                     className='product__item-img'
                     src={props.imageUrl}
                     alt='Item'
                 />
-            </a>
+            </NavLink>
             <div className="product__item-content">
                 <div className="product__item-name">
                     <a href="#" className="product__item-title">

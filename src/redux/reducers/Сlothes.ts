@@ -12,6 +12,7 @@ const initialState = {
     sliderOne:[],
     sliderTwo:[],
     sliderThird:[],
+    clothes:{}
 }
 
 type InitialStateType = typeof initialState
@@ -46,6 +47,12 @@ export const clothesReducer = (state = initialState, action:any):InitialStateTyp
             return {
                 ...state,
                 isLoaded: action.payload
+            }
+        }
+        case "SET_CLOTHES_PRODUCT":{
+            return {
+                ...state,
+                clothes: action.clothes
             }
         }
         default: {

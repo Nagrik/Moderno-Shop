@@ -58,3 +58,4 @@ export const fetchClothesSliderThird = () => (dispatch:any) =>  {
     })
 }
 
+export const setClothesProduct = (clothes:any) => ({type:"SET_CLOTHES_PRODUCT", clothes})

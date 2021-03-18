@@ -7,8 +7,13 @@ import bassket from "../../img/basket/basket_git.png";
 import bassketTelegram from "../../img/basket/basket_telegram.png";
 import userPro from "../../img/user-pro.jpg";
 import { NavLink } from 'react-router-dom';
+import {useSelector} from "react-redux";
 
 export default function Header(){
+    const {totalPrice,totalCount} = useSelector(({cart}:any) => ({
+        totalPrice:cart.totalPrice,
+        totalCount: cart.totalCount
+    }))
     return(
         <header className="header">
             <div className="header__top">
@@ -104,7 +109,7 @@ export default function Header(){
 
                             <div className="basket__box">
                                 <a className="basket header__circle active icon-shopping-basket" href="#">
-                                    <span>6</span>
+                                    <span>{totalCount}</span>
                                 </a>
                                 <div className="circle__menu">
 
@@ -133,7 +138,7 @@ export default function Header(){
                                                 Total
                                             </div>
                                             <div className="basket__summ-price">
-                                                $118
+                                                {totalPrice} $
                                             </div>
                                         </div>
 
@@ -202,7 +207,7 @@ export default function Header(){
                             <li><NavLink to="/Product">Product</NavLink></li>
                             <li><NavLink to="/Profile">Profile</NavLink></li>
                             <li><NavLink to="/Settings">Settings</NavLink></li>
-                            <li><a href="../public/upload.html">upload</a></li>
+                            <li><NavLink to="/Cart"/></li>
                             <li><a href="../public/withdrawals.html">withdrawals</a></li>
                             <li><a href="#">Contact</a></li>
                             <li><a href="#">Help</a></li>

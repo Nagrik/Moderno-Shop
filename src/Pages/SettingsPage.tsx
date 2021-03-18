@@ -34,102 +34,108 @@ const SignupSchema = Yup.object().shape({
 
 export const SettingsPage = () => {
     return (
-        <div className='Settings'>
-            <div className='settings-title'>
-                <h1>Personal Information</h1>
+        <div className="wrapper">
+            <div className="content page-content">
+                <div className='Settings'>
+                    <div className='settings-title'>
+                        <h1>Personal Information</h1>
+                    </div>
+                    <Formik
+                        initialValues={{
+                            firstName: '',
+                            lastName: '',
+                            email: '',
+                            Company: '',
+                            City: '',
+                        }}
+
+                        validationSchema={SignupSchema}
+                        onSubmit={(
+                            values: Values,
+                            {setSubmitting}: FormikHelpers<Values>,
+                        ) => {
+                            setTimeout(async () => {
+
+                                try {
+                                    const response = await axios.post('https://modernoshop-b8052-default-rtdb.firebaseio.com/UserInfo.json', values)
+                                } catch (e) {
+                                    console.log(e)
+                                }
+
+
+                                setSubmitting(false);
+                            }, 500);
+                        }}
+                    >
+                        {({errors, touched}) => (
+                            <Form className='SettingsForm'>
+                                <div className='InputItem'>
+                                    <label htmlFor="firstName">First Name</label>
+                                    <Field id="firstName" name="firstName" placeholder="John"
+                                           className='FieldSettings'/>
+
+                                    {errors.firstName && touched.firstName ? (
+                                        <div className='error'>{errors.firstName}</div>
+                                    ) : null}
+                                </div>
+
+                                <div className='InputItem'>
+                                    <label htmlFor="lastName">Last Name</label>
+                                    <Field id="lastName" name="lastName" placeholder="Doe" className='FieldSettings'/>
+
+                                    {errors.lastName && touched.lastName ? (
+                                        <div className='error'>{errors.lastName}</div>
+                                    ) : null}
+                                </div>
+
+                                <div className='InputItem'>
+                                    <label htmlFor="lastName">City</label>
+                                    <Field id="City" name="City" placeholder="Kyiv" className='FieldSettings'/>
+
+                                    {errors.City && touched.City ? (
+                                        <div className='error'>{errors.City}</div>
+                                    ) : null}
+                                </div>
+
+                                <div className='InputItem'>
+                                    <label htmlFor="Company">Company Name</label>
+                                    <Field id="Company" name="Company" placeholder="Apple" className='FieldSettings'/>
+
+                                    {errors.Company && touched.Company ? (
+                                        <div className='error'>{errors.Company}</div>
+                                    ) : null}
+                                </div>
+
+                                <div className='InputItem'>
+                                    <label htmlFor="email">Email</label>
+                                    <Field
+                                        id="email"
+                                        name="email"
+                                        placeholder="john@acme.com"
+                                        type="email"
+                                        className='FieldSettings'
+                                    />
+
+                                    {errors.email && touched.email ? (
+                                        <div className='error'>{errors.email}</div>
+                                    ) : null}
+                                </div>
+
+                                <div className='settings-button-wrapper'>
+                                    {
+                                        !errors.email && !errors.firstName && !errors.lastName && !errors.City && !errors.Company
+                                            ? <button type="submit" className='settings-button'>Submit</button>
+                                            : <button type="submit" className='settings-button-disabled'
+                                                      disabled>Submit</button>
+
+                                    }
+
+                                </div>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>
             </div>
-            <Formik
-                initialValues={{
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    Company: '',
-                    City: '',
-                }}
-
-                validationSchema={SignupSchema}
-                onSubmit={(
-                    values: Values,
-                    {setSubmitting}: FormikHelpers<Values>,
-                ) => {
-                    setTimeout(async () => {
-
-                          try {
-                              const response =  await axios.post('https://modernoshop-b8052-default-rtdb.firebaseio.com/UserInfo.json', values)
-                          }catch (e) {
-                              console.log(e)
-                          }
-
-
-                        setSubmitting(false);
-                    }, 500);
-                }}
-            >
-                {({ errors, touched }) => (
-                <Form className='SettingsForm'>
-                    <div className='InputItem'>
-                        <label htmlFor="firstName">First Name</label>
-                        <Field id="firstName" name="firstName" placeholder="John" className='FieldSettings'/>
-
-                        {errors.firstName && touched.firstName ? (
-                            <div className='error'>{errors.firstName}</div>
-                        ) : null}
-                    </div>
-
-                    <div className='InputItem'>
-                        <label htmlFor="lastName">Last Name</label>
-                        <Field id="lastName" name="lastName" placeholder="Doe" className='FieldSettings'/>
-
-                        {errors.lastName && touched.lastName ? (
-                            <div className='error'>{errors.lastName}</div>
-                        ) : null}
-                    </div>
-
-                    <div className='InputItem'>
-                        <label htmlFor="lastName">City</label>
-                        <Field id="City" name="City" placeholder="Kyiv" className='FieldSettings'/>
-
-                        {errors.City && touched.City ? (
-                            <div className='error'>{errors.City}</div>
-                        ) : null}
-                    </div>
-
-                    <div className='InputItem'>
-                        <label htmlFor="Company">Company Name</label>
-                        <Field id="Company" name="Company" placeholder="Apple" className='FieldSettings'/>
-
-                        {errors.Company && touched.Company ? (
-                            <div className='error'>{errors.Company}</div>
-                        ) : null}
-                    </div>
-
-                    <div className='InputItem'>
-                        <label htmlFor="email">Email</label>
-                        <Field
-                            id="email"
-                            name="email"
-                            placeholder="john@acme.com"
-                            type="email"
-                            className='FieldSettings'
-                        />
-
-                        {errors.email && touched.email ? (
-                            <div className='error'>{errors.email}</div>
-                        ) : null}
-                    </div>
-
-                    <div className='settings-button-wrapper'>
-                        {
-                            !errors.email && !errors.firstName && !errors.lastName && !errors.City && !errors.Company
-                                ? <button type="submit" className='settings-button'>Submit</button>
-                                : <button type="submit" className='settings-button-disabled' disabled>Submit</button>
-
-                        }
-
-                    </div>
-                </Form>
-                )}
-            </Formik>
         </div>
     );
 };

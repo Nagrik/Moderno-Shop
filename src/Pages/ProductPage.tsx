@@ -5,9 +5,17 @@ import MoreProducts from "../Components/ProductComponents/MoreProducts";
 import ProductAside from "../Components/ProductComponents/ProductAside";
 import BreadCrumbsProduct from "../Components/ProductComponents/BreadCrumbsProduct";
 import {TabContentTitle} from "../Components/ProductComponents/TabContentTitle";
+import axios from "axios";
+import {connect, useDispatch} from "react-redux";
+import { setClothesProduct} from "../redux/actions/clothes";
 
-export default function ProductPage() {
-
+ function ProductPage(props:any) {
+    React.useEffect( () => {
+        axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/2.json')
+            .then(response => {
+                props.setClothesProduct(response.data)
+            })
+    }, [])
 
     return (
         <div className="wrapper">
@@ -18,7 +26,9 @@ export default function ProductPage() {
                         <div className="product-one__inner">
                             <div className="product-one__content">
                                 <div className="product-one__img-inner">
-                                    <div className="product-one__img"/>
+                                    <div className="product-one__img">
+                                        <img src={props.clothes.imageUrl} alt='' className="product-one__img"/>
+                                    </div>
                                 </div>
                                 <div className="product-one__title">
                                     GTBuilder - Construction & Building WordPress Theme
@@ -33,7 +43,7 @@ export default function ProductPage() {
                                 <TabContentTitle/>
                                 <MoreProducts/>
                             </div>
-                            <ProductAside/>
+                            <ProductAside clothesItems={props.clothes} onCLickAddClothes={() => alert('123')}/>
 
                         </div>
                     </div>
@@ -43,3 +53,9 @@ export default function ProductPage() {
         </div>
     )
 }
+
+const mapStateToProps = (state:any) => ({
+    clothes:state.clothes.clothes
+})
+
+export default connect(mapStateToProps, {setClothesProduct})(ProductPage)

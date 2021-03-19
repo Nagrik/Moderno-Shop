@@ -3,34 +3,39 @@ import Categories from "./Categories/Categories";
 import ProductsItem from "./ProductsItem/index";
 import {useDispatch, useSelector} from "react-redux";
 import {setCategory} from '../../redux/actions/filters'
-import {fetchClothes} from "../../redux/actions/clothes";
+import {fetchClothes, fetchProfile} from "../../redux/actions/clothes";
 import PlaceholderItems from "./ProductsItem/PlaceholderItems";
-import { NavLink } from 'react-router-dom';
-import {log} from "util";
+import {NavLink} from 'react-router-dom';
 
 interface RootState {
-    clothes:any
-    items:Array<object>
-    isLoaded:boolean
+    clothes: any
+    items: Array<object>
+    isLoaded: boolean
     filters: any
 }
-const selectClothes = ({clothes}:RootState) => clothes.items
-const selectLoading = ({clothes}:RootState) => clothes.isLoaded
-const selectFilters = ({filters}:RootState) => filters
+
+const selectClothes = ({clothes}: RootState) => clothes.items
+const selectLoading = ({clothes}: RootState) => clothes.isLoaded
+const selectFilters = ({filters}: RootState) => filters
+const selectAuthor = ({clothes}: any) => clothes
 
 export default function Products() {
     const dispatch = useDispatch()
-    
+
     const items = useSelector(selectClothes)
     const isLoaded = useSelector(selectLoading)
     const {category} = useSelector(selectFilters)
+    const author = useSelector(selectAuthor)
+
+
 
     const onSelectCategory = React.useCallback((index) => {
         dispatch(setCategory(index))
-    },[])
+    }, [])
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchClothes())
+        dispatch(fetchProfile())
     }, [category])
 
     const categoryNames = ['Hoodie', 'T-Short', 'Pants', 'Glasses']
@@ -49,9 +54,10 @@ export default function Products() {
                                 categoryNames={categoryNames}/>
                         </div>
                         <div className="products__inner-box">
-                            {isLoaded ? items.map((obj:object) => (
+                            {isLoaded ? items.map((obj: object) => (
                                 //@ts-ignore
-                                <ProductsItem key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))}
+                                <ProductsItem  author={author} key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (
+                                <PlaceholderItems key={index}/>))}
                         </div>
 
                     </div>

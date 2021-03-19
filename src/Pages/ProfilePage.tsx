@@ -1,17 +1,15 @@
 import React from 'react'
 import BreadCrumbsProfile from "../Components/ProfilePageComponents/BreadCrumbs";
-import logo from '../img/ava.jpg'
-import ProfileTabs from "../Components/ProfilePageComponents/Tabs";
 import RateStars from "../Components/Products/RateStars";
+import MoreProducts from "../Components/ProductComponents/MoreProducts";
 
-export default function ProfilePage() {
+
+export default function ProfilePage({author}:any) {
+
     return (
         <div className="wrapper">
             <div className="content page-content">
-
                 <BreadCrumbsProfile/>
-
-
                 <section className="profile">
                     <div className="container">
                         <div className="profile__inner">
@@ -24,10 +22,10 @@ export default function ProfilePage() {
 
                                     <div className="product-author__box">
                                         <div className="author__avatar">
-                                            <img src={logo} alt="" className='author__avatar'/>
+                                            <img src={author.imageUrl} alt="" className='author__avatar'/>
                                         </div>
                                         <div className="author__info">
-                                            <div className="author__name">Roman Nahryshko</div>
+                                            <div className="author__name">{author.name}</div>
                                             <div className="profile-status profile-on">Online</div>
                                         </div>
                                     </div>
@@ -53,22 +51,24 @@ export default function ProfilePage() {
                             </div>
                             <div className="profile__content">
                                 <div className="profile__banner">
-                                    <div className="profile__banner-img"/>
+                                    <div className="profile__banner-img">
+                                        <img src={author.bannerUrl} alt='' className="profile__banner-img"/>
+                                    </div>
                                 </div>
                                 <div className="profile__items">
                                     <div className="profile__item">
                                         <div className="profile__item-title">Country:</div>
-                                        <div className="profile__item-content">England</div>
+                                        <div className="profile__item-content">{author.country}</div>
                                     </div>
                                     <div className="profile__item">
                                         <div className="profile__item-title">Member Since:</div>
-                                        <div className="profile__item-content">December 26, 2014</div>
+                                        <div className="profile__item-content">{author.memberSince}</div>
                                     </div>
                                     <div className="profile__item">
                                         <div className="profile__item-title">Author Rating:</div>
                                         <div className="profile__item-content">
                                             <div className="rate-star"/>
-                                            <RateStars rating={5}/>
+                                            <RateStars rating={author.rating}/>
                                         </div>
                                     </div>
                                     <div className="profile__item">
@@ -141,6 +141,7 @@ export default function ProfilePage() {
                                         </div>
                                     </div>
 
+                                    <MoreProducts/>
 
                                 </div>
                             </div>
@@ -148,8 +149,6 @@ export default function ProfilePage() {
                         </div>
                     </div>
                 </section>
-
-
             </div>
 
         </div>

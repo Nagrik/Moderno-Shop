@@ -9,6 +9,8 @@ import Footer from "./Components/Footer/Footer";
 import ProfilePage from "./Pages/ProfilePage";
 import {SettingsPage} from "./Pages/SettingsPage";
 import CartPage from "./Pages/CartPage";
+import ProductPageContainer from "./Containers/ProductPageContainer";
+import ProfileContainer from "./Containers/ProflePageContainer";
 
 
 function App() {
@@ -18,8 +20,8 @@ function App() {
                 <Header/>
                 <Route path='/Products' component={NewItemPage}/>
                 <Route path='/Home' component={HomePage}/>
-                <Route path='/Product' component={ProductPage}/>
-                <Route path='/Profile' component={ProfilePage}/>
+                <Route path='/Product' component={ProductPageContainer}/>
+                <Route path='/Profile' component={ProfileContainer}/>
                 <Route path='/Settings' component={SettingsPage}/>
                 <Route path='/Cart' component={CartPage}/>
                 <Footer/>

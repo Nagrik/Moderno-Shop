@@ -1,6 +1,11 @@
 import React from 'react'
 import {Carousel} from 'antd';
-import {fetchClothesSliderOne, fetchClothesSliderTwo,fetchClothesSliderThird} from "../../redux/actions/clothes";
+import {
+    fetchClothesSliderOne,
+    fetchClothesSliderTwo,
+    fetchClothesSliderThird,
+    fetchProfile
+} from "../../redux/actions/clothes";
 import {useDispatch, useSelector} from "react-redux";
 import ProductSliderItemOne from "./ProductSliderItemOne";
 import ProductSliderItemTwo from "./ProductSliderItemTwo";
@@ -26,22 +31,17 @@ export default function ProductsSlider() {
 
     const selectClothesThree = ({clothes}:RootState) => clothes.sliderThird
     const sliderItemsThree = useSelector(selectClothesThree)
+
+    const selectAuthor = ({clothes}:any) => clothes.author
+    const author = useSelector(selectAuthor)
     React.useEffect(() => {
         // @ts-ignore
         dispatch(fetchClothesSliderOne())
-    }, [])
-
-
-    React.useEffect(() => {
-        // @ts-ignore
         dispatch(fetchClothesSliderTwo())
-    }, [])
-
-
-    React.useEffect(() => {
-        // @ts-ignore
         dispatch(fetchClothesSliderThird())
+    dispatch(fetchProfile())
     }, [])
+
 
 
 

@@ -9,10 +9,13 @@
 const initialState = {
     items: [],
     isLoaded: false,
+    isLoadedProduct:false,
+    isLoadedProfile:false,
     sliderOne:[],
     sliderTwo:[],
     sliderThird:[],
-    clothes:{}
+    clothes:{},
+    author:[],
 }
 
 type InitialStateType = typeof initialState
@@ -49,12 +52,37 @@ export const clothesReducer = (state = initialState, action:any):InitialStateTyp
                 isLoaded: action.payload
             }
         }
+        case "SET_LOADED_PRODUCT":{
+            return {
+                ...state,
+                isLoadedProduct: action.payload
+            }
+        }
+        case "SET_LOADED_PROFILE":{
+            return {
+                ...state,
+                isLoadedProfile: action.payload
+            }
+        }
         case "SET_CLOTHES_PRODUCT":{
             return {
                 ...state,
                 clothes: action.clothes
             }
         }
+        case "SET_AUTHOR":
+            return {
+                ...state,
+                author: action.payload,
+                isLoadedProduct: true,
+                isLoadedProfile: true,
+            }
+        case "SET_PROFILE":
+            return {
+                ...state,
+                author: action.payload,
+                isLoadedProfile: true,
+            }
         default: {
             return state
         }

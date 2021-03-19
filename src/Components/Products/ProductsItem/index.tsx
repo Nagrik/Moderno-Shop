@@ -8,7 +8,8 @@ type PropsType = {
     imageUrl: string,
     price: number,
     rating: number
-    id:number
+    id:number,
+    author:string
 }
 export default function ProductsItem(props: PropsType) {
 
@@ -23,22 +24,26 @@ export default function ProductsItem(props: PropsType) {
             </NavLink>
             <div className="product__item-content">
                 <div className="product__item-name">
-                    <a href="#" className="product__item-title">
+                    <NavLink to={'/Product/' + props.id} href="#" className="product__item-title">
                         {props.name}
-                    </a>
-                    <a className="product__item-category" href="#">
+                    </NavLink>
+                    <div className="product__item-category">
                         Site Template
-                    </a>
+                    </div>
                 </div>
                 <div className="product__item-price">
                     {props.price} грн
                 </div>
             </div>
             <div className="product__item-info">
-                <a className="product__item-author" href="#">
-                    <div className="avatar"/>
-                    <span>Rad</span>
-                </a>
+                <NavLink to={'/Profile/' + props.id} className="product__item-author">
+                    <div>
+                        {/*@ts-ignore*/}
+                        <img src={props.author.imageUrl} alt='' className="avatar"/>
+                    </div>
+                    {/*@ts-ignore*/}
+                    <span>{props.author.name}</span>
+                </NavLink>
                 <div className="product__item-star">
                     <RateStars rating={props.rating}/>
                     &#8195;({props.rating})

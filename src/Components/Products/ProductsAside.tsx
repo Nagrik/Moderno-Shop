@@ -1,19 +1,18 @@
-import React from 'react'
-import Seller from '../../img/ava.jpg'
+import React from 'react';
+import {NavLink} from "react-router-dom";
 
-export default function ProductAside({onCLickAddClothes, clothesItems}:any,){
-    console.log(clothesItems)
-    return(
+const ProductsAside = ({items}:any) => {
+    return (
         <div className="product-one__aside">
             <div className="aside__item product__price">
                 <div className="aside__title">
                     Product Price
                 </div>
                 <div className="price__box">
-                    <div className="price__product">{clothesItems.price} $</div>
+                    <div className="price__product">{items.price} $</div>
                 </div>
 
-                <button onClick={() => onCLickAddClothes } className="icon-shopping-basket">Add to Cart</button>
+                <button className="icon-shopping-basket">Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
                 <button>Buy Now</button>
 
@@ -26,11 +25,11 @@ export default function ProductAside({onCLickAddClothes, clothesItems}:any,){
 
                 <div className="product-author__box">
                     <div className="author__avatar">
-                        <img src={Seller} alt="" className='author__avatar'/>
+                        <img src={items.author.imageUrl} alt="" className='author__avatar'/>
                     </div>
                     <div className="author__info">
-                        <div className="author__name">Roman Nahryshko</div>
-                        <a className="author-info__link" href="#">View Profile</a>
+                        <div className="author__name">{items.author.name}</div>
+                        <NavLink to='/Profile' className="author-info__link" href="#">View Profile</NavLink>
                     </div>
                 </div>
                 <ul className="author__awards-list">
@@ -75,5 +74,7 @@ export default function ProductAside({onCLickAddClothes, clothesItems}:any,){
 
 
         </div>
-    )
-}
+    );
+};
+
+export default ProductsAside;

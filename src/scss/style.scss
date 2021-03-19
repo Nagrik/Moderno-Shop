@@ -1272,7 +1272,6 @@
 }
 
 .avatar {
-  background-image: url(../img/user.jpg);
 }
 
 .product-page__aside {
@@ -2334,7 +2333,6 @@ button.icon-move-vertical-alt1 {
 .profile__banner-img {
   min-width: 900px;
   width: 100%;
-  background-image: url(../img/banner.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -2955,7 +2953,8 @@ button.icon-move-vertical-alt1 {
 }
 
 .stars {
-  font-size: 15px;
+  font-size: 13px;
+  color: orange;
 }
 
 .ant-tabs-tab {

@@ -140,8 +140,8 @@ export default function ProfilePage({author}:any) {
                                             <span/>
                                         </div>
                                     </div>
-
-                                    <MoreProducts/>
+                                        {/*@ts-ignore*/}
+                                    <MoreProducts author={author}/>
 
                                 </div>
                             </div>

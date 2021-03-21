@@ -1,14 +1,21 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Links from "../Components/ProductComponents/Links";
-
-import MoreProducts from "../Components/ProductComponents/MoreProducts";
 import BreadCrumbsProduct from "../Components/ProductComponents/BreadCrumbsProduct";
 import {TabContentTitle} from "../Components/ProductComponents/TabContentTitle";
-
-import {NavLink} from "react-router-dom";
 import ProductsAside from "../Components/Products/ProductsAside";
+import {addClothesToCart} from "../redux/actions/cart";
+import {useDispatch} from "react-redux";
 
- export default function ProductPage({clothesItem}:any) {
+export default function ProductPage({clothesItem}:any) {
+    const dispatch = useDispatch()
+
+     const handleAddClothesToCart = (obj:any) => {
+        dispatch({
+            type: "ADD_CLOTHES_CART",
+            payload:obj
+        })
+     }
+
     return (
         <div className="wrapper">
             <div className="content page-content">
@@ -34,7 +41,8 @@ import ProductsAside from "../Components/Products/ProductsAside";
                                 <Links/>
                                 <TabContentTitle/>
                             </div>
-                            <ProductsAside items={clothesItem}/>
+                            <ProductsAside onCLickAddClothes={handleAddClothesToCart}
+                                           items={clothesItem}/>
 
                         </div>
                     </div>

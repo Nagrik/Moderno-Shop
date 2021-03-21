@@ -1,10 +1,16 @@
 import React from 'react';
 import ProductPage from "../Pages/ProductPage";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchAuthor} from "../redux/actions/clothes";
+import {fetchProfile, setLoadedProduct, setProfile} from "../redux/actions/clothes";
 import PlaceholderItems from "../Components/Products/ProductsItem/PlaceholderItems";
+import { withRouter } from 'react-router-dom';
+import axios from "axios";
 
-const ProductPageContainer = () => {
+const ProductPageContainer = (props:any) => {
+
+    let clothesId = props.match.params.productId
+
+
     const dispatch = useDispatch()
 
     const selectAuthor = ({clothes}:any) => clothes.author
@@ -16,7 +22,10 @@ const ProductPageContainer = () => {
 
     React.useEffect(() => {
         // @ts-ignore
-        dispatch(fetchAuthor())
+        dispatch(setLoadedProduct(false))
+        axios.get(`https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/${clothesId}.json`).then(({data}) => {
+            dispatch(setProfile(data))
+        })
     }, [])
     return (
         <div>
@@ -28,4 +37,4 @@ const ProductPageContainer = () => {
     );
 };
 
-export default ProductPageContainer;
+export default withRouter(ProductPageContainer) ;

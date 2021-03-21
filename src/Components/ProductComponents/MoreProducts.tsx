@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function MoreProducts() {
+export default function MoreProducts({author}:any) {
     return (
         <div className="product-one__more">
             <div className="product-one__more-title">
-                More Product by Roman Nahryshko
+                More products by {author.name}:
             </div>
             <div className="product-one__more-icons">
                 <div className="product-one__more-icon productmini">

@@ -10,10 +10,7 @@ import { NavLink } from 'react-router-dom';
 import {useSelector} from "react-redux";
 
 export default function Header(){
-    const {totalPrice,totalCount} = useSelector(({cart}:any) => ({
-        totalPrice:cart.totalPrice,
-        totalCount: cart.totalCount
-    }))
+    const {totalPrice,totalCount} = useSelector(({cart}:any) => cart)
     return(
         <header className="header">
             <div className="header__top">

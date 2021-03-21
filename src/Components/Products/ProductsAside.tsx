@@ -1,7 +1,13 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
 
-const ProductsAside = ({items}:any) => {
+const ProductsAside = ({items, onCLickAddClothes}: any) => {
+    let userId = items.author.id - 1
+
+    const handleAddClothes = () => {
+        onCLickAddClothes({items})
+    }
+
     return (
         <div className="product-one__aside">
             <div className="aside__item product__price">
@@ -12,7 +18,7 @@ const ProductsAside = ({items}:any) => {
                     <div className="price__product">{items.price} $</div>
                 </div>
 
-                <button className="icon-shopping-basket">Add to Cart</button>
+                <button className="icon-shopping-basket" onClick={handleAddClothes}>Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
                 <button>Buy Now</button>
 
@@ -29,7 +35,7 @@ const ProductsAside = ({items}:any) => {
                     </div>
                     <div className="author__info">
                         <div className="author__name">{items.author.name}</div>
-                        <NavLink to='/Profile' className="author-info__link" href="#">View Profile</NavLink>
+                        <NavLink to={"/Profile/" + userId} className="author-info__link">View Profile</NavLink>
                     </div>
                 </div>
                 <ul className="author__awards-list">

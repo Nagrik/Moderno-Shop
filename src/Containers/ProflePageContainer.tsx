@@ -1,10 +1,13 @@
 import React from 'react';
 import ProfilePage from "../Pages/ProfilePage";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProfile} from "../redux/actions/clothes";
+import {fetchProfile, setLoadedProduct, setProfile} from "../redux/actions/clothes";
 import PlaceholderItems from "../Components/Products/ProductsItem/PlaceholderItems";
+import axios from "axios";
+import { withRouter } from 'react-router-dom';
 
-const ProfileContainer = () => {
+const ProfileContainer = (props:any) => {
+   let userId = props.match.params.userId
     const dispatch = useDispatch()
 
     const selectAuthor = ({clothes}:any) => clothes.author.author
@@ -15,7 +18,10 @@ const ProfileContainer = () => {
 
     React.useEffect(() => {
         // @ts-ignore
-        dispatch(fetchProfile())
+        dispatch(setLoadedProduct(false))
+        axios.get(`https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/${userId}.json`).then(({data}) => {
+            dispatch(setProfile(data))
+        })
     }, [])
 
 
@@ -27,4 +33,4 @@ const ProfileContainer = () => {
     );
 };
 
-export default ProfileContainer;
+export default withRouter(ProfileContainer);

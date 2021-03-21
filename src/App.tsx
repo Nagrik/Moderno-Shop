@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route , Redirect} from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 
 import HomePage from "./Pages/Home";
 import NewItemPage from "./Pages/NewItemPage";
@@ -20,8 +20,8 @@ function App() {
                 <Header/>
                 <Route path='/Products' component={NewItemPage}/>
                 <Route path='/Home' component={HomePage}/>
-                <Route path='/Product' component={ProductPageContainer}/>
-                <Route path='/Profile' component={ProfileContainer}/>
+                <Route path='/Product/:productId' component={ProductPageContainer}/>
+                <Route path='/Profile/:userId' component={ProfileContainer}/>
                 <Route path='/Settings' component={SettingsPage}/>
                 <Route path='/Cart' component={CartPage}/>
                 <Footer/>

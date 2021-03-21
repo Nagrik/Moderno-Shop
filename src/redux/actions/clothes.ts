@@ -69,18 +69,6 @@ export const fetchClothesSliderThird = () => (dispatch:any) =>  {
 export const setClothesProduct = (clothes:any) => ({type:"SET_CLOTHES_PRODUCT", clothes})
 
 
-export const setAuthor = (items:Object) => ({
-    type:'SET_AUTHOR',
-    payload:items
-
-})
-
-export const fetchAuthor = () => (dispatch:any) =>  {
-    dispatch(setLoadedProduct(false))
-    axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/2.json').then(({data}) => {
-        dispatch(setAuthor(data))
-    })
-}
 export const setProfile = (items:Object) => ({
     type:'SET_AUTHOR',
     payload:items
@@ -90,7 +78,7 @@ export const setProfile = (items:Object) => ({
 export const fetchProfile = () => (dispatch:any) =>  {
     dispatch(setLoadedProduct(false))
     axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/2.json').then(({data}) => {
-        dispatch(setAuthor(data))
+        dispatch(setProfile(data))
     })
 }
 

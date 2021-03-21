@@ -20,8 +20,8 @@ export default function Aside() {
             <CategoryAside/>
             <PriceRange/>
 
-            <div className="top-sellers aside__item">
-                <div className="aside__title">
+            <div className="top-sellers-item aside__item-products">
+                <div className="aside__title-product">
                     Top 10 Sellers
                 </div>
 

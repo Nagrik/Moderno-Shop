@@ -139,7 +139,7 @@ export default function Header(){
                                             </div>
                                         </div>
 
-                                        <a className="basket_btn" href="#">Go to Cart</a>
+                                        <NavLink to='/Cart' className="basket_btn" href="#">Go to Cart</NavLink>
                                         <a className="basket_btn basket_btn-checkout" href="#">Go to Checkout</a>
                                     </div>
                                 </div>

@@ -11,10 +11,12 @@ interface RootState {
     clothes: any
     items: Array<object>
     isLoaded: boolean
-    filters: any
+    filters: any,
+    cart:any
 }
 
 const selectClothes = ({clothes}: RootState) => clothes.items
+const selectCartItems = ({cart}: RootState) => cart.items
 const selectLoading = ({clothes}: RootState) => clothes.isLoaded
 const selectFilters = ({filters}: RootState) => filters
 const selectAuthor = ({clothes}: any) => clothes
@@ -23,6 +25,7 @@ export default function Products() {
     const dispatch = useDispatch()
 
     const items = useSelector(selectClothes)
+    const cartItems = useSelector(selectCartItems)
     const isLoaded = useSelector(selectLoading)
     const {category} = useSelector(selectFilters)
     const author = useSelector(selectAuthor)
@@ -56,7 +59,8 @@ export default function Products() {
                         <div className="products__inner-box">
                             {isLoaded ? items.map((obj: object) => (
                                 //@ts-ignore
-                                <ProductsItem  author={author} key={obj.id} {...obj} />)) : Array(10).fill(0).map((_, index) => (
+                                <ProductsItem  author={author} key={obj.id} {...obj}/>))
+                                : Array(10).fill(0).map((_, index) => (
                                 <PlaceholderItems key={index}/>))}
                         </div>
 

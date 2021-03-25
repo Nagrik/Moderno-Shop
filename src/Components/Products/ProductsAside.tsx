@@ -5,7 +5,10 @@ const ProductsAside = ({items, onCLickAddClothes}: any) => {
     let userId = items.author.id - 1
 
     const handleAddClothes = () => {
-        onCLickAddClothes({items})
+        const obj = {
+            items
+        }
+        onCLickAddClothes(obj)
     }
 
     return (
@@ -20,7 +23,11 @@ const ProductsAside = ({items, onCLickAddClothes}: any) => {
 
                 <button className="icon-shopping-basket" onClick={handleAddClothes}>Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
-                <button>Buy Now</button>
+                <NavLink to='/Cart'>
+                    <button  onClick={handleAddClothes} className='BuyNow'>
+                        Buy Now
+                    </button>
+                </NavLink>
 
             </div>
             <div className="aside__item">

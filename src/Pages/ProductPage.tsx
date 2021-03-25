@@ -4,12 +4,12 @@ import BreadCrumbsProduct from "../Components/ProductComponents/BreadCrumbsProdu
 import {TabContentTitle} from "../Components/ProductComponents/TabContentTitle";
 import ProductsAside from "../Components/Products/ProductsAside";
 import {addClothesToCart} from "../redux/actions/cart";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 export default function ProductPage({clothesItem}:any) {
     const dispatch = useDispatch()
 
-     const handleAddClothesToCart = (obj:any) => {
+     const handleAddClothesToCart = (obj:object) => {
         dispatch({
             type: "ADD_CLOTHES_CART",
             payload:obj
@@ -42,7 +42,8 @@ export default function ProductPage({clothesItem}:any) {
                                 <TabContentTitle/>
                             </div>
                             <ProductsAside onCLickAddClothes={handleAddClothesToCart}
-                                           items={clothesItem}/>
+                                           items={clothesItem}
+                            />
 
                         </div>
                     </div>

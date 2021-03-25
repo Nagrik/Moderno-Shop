@@ -23,10 +23,8 @@ const ProductsAside = ({items, onCLickAddClothes}: any) => {
 
                 <button className="icon-shopping-basket" onClick={handleAddClothes}>Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
-                <NavLink to='/Cart'>
-                    <button  onClick={handleAddClothes} className='BuyNow'>
+                <NavLink to='/Cart' onClick={handleAddClothes} className='BuyNow'>
                         Buy Now
-                    </button>
                 </NavLink>
 
             </div>

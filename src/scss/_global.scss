@@ -7,6 +7,9 @@ body {
 	height: 100%;
     position: relative;
 }
+a:hover{
+    color:#be2d2d !important;
+}
 
 *, 
 *::before,
@@ -17,7 +20,7 @@ body {
 a {
     display: inline-block;
     text-decoration: none;
-    color:white;
+    color:#263238;
 }
 
 ul,
@@ -113,7 +116,7 @@ body {
             }    
     }
     a {
-        color: #b0bec5;         
+        color: #b0bec5;
     }         
   }    
 }

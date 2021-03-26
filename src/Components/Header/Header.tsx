@@ -7,10 +7,31 @@ import bassket from "../../img/basket/basket_git.png";
 import bassketTelegram from "../../img/basket/basket_telegram.png";
 import userPro from "../../img/user-pro.jpg";
 import { NavLink } from 'react-router-dom';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import CartHoverItems from "./cartHover";
+import {clearCart, minusCartItem, plusCartItem, removeCartItem} from "../../redux/actions/cart";
 
 export default function Header(){
-    const {totalPrice,totalCount} = useSelector(({cart}:any) => cart)
+    const dispatch = useDispatch()
+
+    const {totalPrice, totalCount, items} = useSelector(({cart}: any) => cart)
+
+    const addedClothes = Object.keys(items).map(key => {
+        return items[key].items[0]
+    })
+
+    const onRemoveItem = (id: number) => {
+        if (window.confirm('Are you sure you want to delete?')) {
+            dispatch(removeCartItem(id))
+        }
+    }
+    const onPlusItem = (id:number) => {
+        dispatch(plusCartItem(id))
+    }
+    const onMinusItem = (id:number) => {
+        dispatch(minusCartItem(id))
+    }
+
     return(
         <header className="header">
             <div className="header__top">
@@ -109,25 +130,24 @@ export default function Header(){
                                     <span>{totalCount}</span>
                                 </a>
                                 <div className="circle__menu">
+                                    {
+                                        addedClothes.map((obj, index) =>
+                                            <CartHoverItems
+                                                //@ts-ignore
+                                                id={obj.items.id}
+                                                name={obj.items.name}
+                                                type={obj.items.category}
+                                                price={obj.items.price}
+                                                key={index}
+                                                totalPrice={items[obj.items.id].totalPrice}
+                                                totalCount={items[obj.items.id].items.length}
+                                                onRemove={onRemoveItem}
+                                                onMinus={onMinusItem}
+                                                onPlus={onPlusItem}
+                                                imageUrl={obj.items.imageUrl}
+                                            />)
+                                    }
 
-                                    <div className="circle__item">
-                                        <img className="circle__img" src={bassket} alt=""/>
-
-                                        <div className="circle__info">
-                                            <div className="circle__info-name">Grand Ballet</div>
-                                            <div className="circle__info-theme">WordPress</div>
-                                            <div className="circle__info-price">$59</div>
-                                        </div>
-                                    </div>
-
-                                    <div className="circle__item">
-                                        <img className="circle__img" src={bassketTelegram} alt=""/>
-                                        <div className="circle__info">
-                                            <div className="circle__info-name">Apple Device</div>
-                                            <div className="circle__info-theme">WordPress</div>
-                                            <div className="circle__info-price">$59</div>
-                                        </div>
-                                    </div>
 
                                     <div className="basket__summ">
                                         <div className="basket__title">

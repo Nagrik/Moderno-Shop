@@ -1,11 +1,14 @@
 import React from 'react'
 import RateStars from "../Products/RateStars";
+import {log} from "util";
 
 export interface IsProps  {
-    imageUrl:string; name:string; category:string
+    author: any;
+    imageUrl:string; name:string; category:string, price:number
 }
 
 export default function NewProductItem(props:  IsProps){
+    // console.log(props.author)
     return(
 
             <div className="product__item">
@@ -25,7 +28,7 @@ export default function NewProductItem(props:  IsProps){
                         </div>
                     </div>
                     <div className="product__item-price">
-                        $19
+                        {props.price} $
                         <span>Sales ( 14 ) </span>
                     </div>
 
@@ -33,8 +36,10 @@ export default function NewProductItem(props:  IsProps){
 
                 <div className="product__item-info">
                     <a className="product__item-author" href="#">
-                        <div className="avatar"/>
-                        <span>Rad</span>
+                        <div className="avatar">
+                            <img src={props.author.imageUrl} alt='' className="avatar"/>
+                        </div>
+                        <span>{props.author.name}</span>
                     </a>
                     <div className="product__item-star">
                         <RateStars rating={5}/>

@@ -32,7 +32,7 @@ export default function ProductsItem(props: PropsType) {
                     </div>
                 </div>
                 <div className="product__item-price">
-                    {props.price} грн
+                    {props.price} $
                 </div>
             </div>
             <div className="product__item-info">

@@ -306,6 +306,8 @@
 
 .circle__img {
   margin-right: 15px;
+  width: 48px;
+  height: 48px;
 }
 
 .circle__info-name {
@@ -374,6 +376,7 @@
 
   .circle__info {
     line-height: 18px;
+
   }
 }
 
@@ -3521,6 +3524,24 @@ $duration: 0.15s;
 .cartItemPlus{
   font-size:21px;
   text-align: center;
+}
+
+.circle__info{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.avatar{
+  min-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-position: center;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 14px;
 }
 
 

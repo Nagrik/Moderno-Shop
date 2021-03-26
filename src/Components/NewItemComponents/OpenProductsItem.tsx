@@ -4,10 +4,12 @@ import RateStars from "../Products/RateStars";
 import {HeartOutlined, MessageOutlined} from '@ant-design/icons';
 
 export interface IsProps  {
+    author: any;
     imageUrl:string; name:string; category:string
 }
 
 export default function OpenProductItems(props:IsProps) {
+    console.log(props.author)
     return (
         <div className='ProductsWrapper'>
             <div>
@@ -29,8 +31,10 @@ export default function OpenProductItems(props:IsProps) {
                 </div>
                 <div className='bottom__content'>
                     <div className='UserStat'>
-                        <img src={user} alt='123'/>
-                        <div>Rad</div>
+                        <div className="avatar">
+                            <img src={props.author.imageUrl} alt='' className="avatar"/>
+                        </div>
+                        <div>{props.author.name}</div>
                     </div>
                     <div className='Stat'>
                         <RateStars rating={5}/>

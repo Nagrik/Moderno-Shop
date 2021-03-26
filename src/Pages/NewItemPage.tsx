@@ -66,7 +66,7 @@ export default function NewItemPage() {
                                         isLoaded ? items.map((obj:any) => (
                                             <NewProductItem key={Math.random()} {...obj} />)) : Array(10).fill(0).map((_, index) => (<PlaceholderItems key={index}/>))
                                     }
-7
+
                                 </div>
                                 <div className="pagination">
                                     <ul className="pagination__list">

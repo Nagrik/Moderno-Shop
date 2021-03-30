@@ -11,6 +11,9 @@ import {SettingsPage} from "./Pages/SettingsPage";
 import CartPage from "./Pages/CartPage";
 import ProductPageContainer from "./Containers/ProductPageContainer";
 import ProfileContainer from "./Containers/ProflePageContainer";
+import {RegisterPage} from "./Pages/RegisterPage";
+import NewItemsContainer from "./Containers/NewItemsContainer";
+import {LoginPage} from "./Pages/LoginPage";
 
 
 function App() {
@@ -21,11 +24,14 @@ function App() {
             <div className="content">
                 <Header/>
                 <Route path='/Products' component={NewItemPage}/>
-                <Route path='/Home' component={HomePage}/>
+                <Route exact path='/' component={HomePage}/>
                 <Route path='/Product/:productId' component={ProductPageContainer}/>
+                <Route path='/NewProduct/:productId' component={NewItemsContainer}/>
                 <Route path='/Profile/:userId' component={ProfileContainer}/>
                 <Route path='/Settings' component={SettingsPage}/>
                 <Route path='/Cart' component={CartPage}/>
+                <Route path='/Registration' component={RegisterPage}/>
+                <Route path='/Login' component={LoginPage}/>
                 <Footer/>
             </div>
         </div>

@@ -1,20 +1,32 @@
-import React from 'react'
+import React, {useState} from 'react'
 import user from '../../img/user.jpg'
 import RateStars from "../Products/RateStars";
 import {HeartOutlined, MessageOutlined} from '@ant-design/icons';
+import { NavLink } from 'react-router-dom';
 
 export interface IsProps  {
     author: any;
-    imageUrl:string; name:string; category:string
+    imageUrl:string; name:string; category:string, items:any, id:number
 }
 
 export default function OpenProductItems(props:IsProps) {
-    console.log(props.author)
+    const [likeCount, setLikeCount] = useState(0);
+    const [like, setLike] = useState(true);
+    const addLikeCount = () => {
+        setLikeCount(likeCount + 1)
+        setLike(false)
+    }
+    const minusLikeCount = () => {
+        setLikeCount(likeCount + -1)
+        setLike(true)
+    }
+
+    const id = props.author.id - 1
     return (
         <div className='ProductsWrapper'>
-            <div>
+            <NavLink to={'/NewProduct/' + id}>
                 <img src={props.imageUrl} className='ProductsItemImage' alt='123'/>
-            </div>
+            </NavLink>
             <div className='Wrapper'>
                 <div className='ContentWrapper'>
                     <div className='Content__top'>
@@ -39,7 +51,12 @@ export default function OpenProductItems(props:IsProps) {
                     <div className='Stat'>
                         <RateStars rating={5}/>
                         <MessageOutlined/> (20)
-                        <HeartOutlined/> (10)
+                        {like ?
+                        <HeartOutlined onClick={addLikeCount}/>
+                        : <HeartOutlined onClick={minusLikeCount} className='activeHeart'/>
+                        }
+
+                        ({likeCount})
                     </div>
                 </div>
             </div>

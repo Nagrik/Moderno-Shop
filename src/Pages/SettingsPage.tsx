@@ -70,8 +70,7 @@ export const SettingsPage = () => {
                         {({errors, touched}) => (
                             <Form className='SettingsForm'>
                                 <div className='InputItem'>
-                                    <label htmlFor="firstName">First Name</label>
-                                    <Field id="firstName" name="firstName" placeholder="John"
+                                    <Field id="firstName" name="firstName" placeholder="First name"
                                            className='FieldSettings'/>
 
                                     {errors.firstName && touched.firstName ? (
@@ -80,8 +79,7 @@ export const SettingsPage = () => {
                                 </div>
 
                                 <div className='InputItem'>
-                                    <label htmlFor="lastName">Last Name</label>
-                                    <Field id="lastName" name="lastName" placeholder="Doe" className='FieldSettings'/>
+                                    <Field id="lastName" name="lastName" placeholder="Surname" className='FieldSettings'/>
 
                                     {errors.lastName && touched.lastName ? (
                                         <div className='error'>{errors.lastName}</div>
@@ -89,8 +87,7 @@ export const SettingsPage = () => {
                                 </div>
 
                                 <div className='InputItem'>
-                                    <label htmlFor="lastName">City</label>
-                                    <Field id="City" name="City" placeholder="Kyiv" className='FieldSettings'/>
+                                    <Field id="City" name="City" placeholder="City" className='FieldSettings'/>
 
                                     {errors.City && touched.City ? (
                                         <div className='error'>{errors.City}</div>
@@ -98,8 +95,7 @@ export const SettingsPage = () => {
                                 </div>
 
                                 <div className='InputItem'>
-                                    <label htmlFor="Company">Company Name</label>
-                                    <Field id="Company" name="Company" placeholder="Apple" className='FieldSettings'/>
+                                    <Field id="Company" name="Company" placeholder="Company name" className='FieldSettings'/>
 
                                     {errors.Company && touched.Company ? (
                                         <div className='error'>{errors.Company}</div>
@@ -107,11 +103,10 @@ export const SettingsPage = () => {
                                 </div>
 
                                 <div className='InputItem'>
-                                    <label htmlFor="email">Email</label>
                                     <Field
                                         id="email"
                                         name="email"
-                                        placeholder="john@acme.com"
+                                        placeholder="email@gmail.com"
                                         type="email"
                                         className='FieldSettings'
                                     />

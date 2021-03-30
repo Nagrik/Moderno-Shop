@@ -336,6 +336,7 @@
   border: 1px solid #e0e0e0;
   border-top: none;
   background-color: #fff;
+  text-align: center;
 }
 
 .basket__title {
@@ -353,15 +354,17 @@
   color: #fff;
   @include f700;
   font-size: 14px;
-  width: 100px;
+  width: 172px;
   background-color: $green;
   padding: 12px 5px;
   text-align: center;
+  margin-left: 4px;
+
 }
 
 .basket_btn-checkout {
   background-color: $red;
-  width: 122px;
+  width: 172px;
   margin-left: 4px;
 }
 
@@ -3049,7 +3052,7 @@ button.icon-move-vertical-alt1 {
 
 .InputItem{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 20px;
   align-items: center;
   position: relative;
@@ -3086,10 +3089,11 @@ button.icon-move-vertical-alt1 {
 .settings-button{
   width: 150px;
   height: 45px;
-  background-color: grey;
+  background-color: $red;
   color: #ffffff;
   cursor: pointer;
   border: none;
+  margin: 0 30px;
 }
 .settings-button-disabled{
   width: 150px;
@@ -3099,6 +3103,7 @@ button.icon-move-vertical-alt1 {
   cursor: pointer;
   border: none;
   opacity: 0.5;
+  margin: 0 5px;
 
 }
 
@@ -3113,7 +3118,10 @@ button.icon-move-vertical-alt1 {
 .error{
   color: red;
   position: absolute;
-  right: -100px;
+  right: 365px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100px;
 }
 
 .errorSettings{
@@ -3418,6 +3426,7 @@ $duration: 0.15s;
       font-size: 18px;
       background: #263238;
       border-radius: 25px;
+      color: white;
     }
   }
 }
@@ -3542,6 +3551,16 @@ $duration: 0.15s;
   background-repeat: no-repeat;
   background-size: cover;
   margin-right: 14px;
+}
+
+.author__info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.activeHeart{
+  color: red;
 }
 
 

@@ -39,7 +39,7 @@ export default function Header(){
 
                     <div className="header__top-inner">
                         <div className="header__logo">
-                            <NavLink to='/Home'>
+                            <NavLink to='/'>
                                 <img src={logo} alt="Logo" width="150" height="50"/>
                             </NavLink>
                         </div>
@@ -196,9 +196,9 @@ export default function Header(){
                                 </div>
                             </div>
 
-                            <a className="header__btn header__btn-login" href="#" data-fancybox data-src="#modal">Login</a>
+                            <NavLink to='/Login' className="header__btn header__btn-login" data-fancybox data-src="#modal">Login</NavLink>
                             <a className="header__btn header__btn-logout header__btn-login--off" href="#">Logout</a>
-                            <a className="header__btn header__btn-register" href="#">Register</a>
+                            <NavLink to='/Registration' className="header__btn header__btn-register">Register</NavLink>
                         </div>
 
                         <div className="header__btn-menu icon-user">
@@ -217,18 +217,7 @@ export default function Header(){
                             <div/>
                             <div/>
                         </div>
-                        <ul className="menu__list">
-                            <li><a href="../public/404.html">404</a></li>
-                            <li><a href="../public/about.html">About</a></li>
-                            <li><NavLink to="/Products">New Products</NavLink></li>
-                            <li><NavLink to="/Product">Product</NavLink></li>
-                            <li><NavLink to="/Profile">Profile</NavLink></li>
-                            <li><NavLink to="/Settings">Settings</NavLink></li>
-                            <li><NavLink to="/Cart"/></li>
-                            <li><a href="../public/withdrawals.html">withdrawals</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Help</a></li>
-                        </ul>
+
                     </nav>
                 </div>
             </div>

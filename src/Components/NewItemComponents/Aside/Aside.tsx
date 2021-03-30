@@ -12,7 +12,6 @@ export default function Aside() {
     const asideItems = useSelector(({aside}) => aside.asideItems)
 
     React.useEffect(() => {
-        // @ts-ignore
         dispatch(fetchProductsAsideItems())
     }, [])
     return (

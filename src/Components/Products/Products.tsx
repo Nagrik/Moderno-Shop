@@ -16,7 +16,6 @@ interface RootState {
 }
 
 const selectClothes = ({clothes}: RootState) => clothes.items
-const selectCartItems = ({cart}: RootState) => cart.items
 const selectLoading = ({clothes}: RootState) => clothes.isLoaded
 const selectFilters = ({filters}: RootState) => filters
 const selectAuthor = ({clothes}: any) => clothes
@@ -25,7 +24,6 @@ export default function Products() {
     const dispatch = useDispatch()
 
     const items = useSelector(selectClothes)
-    const cartItems = useSelector(selectCartItems)
     const isLoaded = useSelector(selectLoading)
     const {category} = useSelector(selectFilters)
     const author = useSelector(selectAuthor)

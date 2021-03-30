@@ -3,15 +3,15 @@ import {NavLink} from "react-router-dom";
 
 const ProductsAside = ({items, onCLickAddClothes}: any) => {
     let userId = items.author.id -1
-    console.log(userId)
+
     const handleAddClothes = () => {
         const obj = {
             items
         }
         onCLickAddClothes(obj)
     }
-
     console.log(items)
+
     return (
         <div className="product-one__aside">
             <div className="aside__item product__price">
@@ -25,8 +25,9 @@ const ProductsAside = ({items, onCLickAddClothes}: any) => {
                 <button className="icon-shopping-basket" onClick={handleAddClothes}>Add to Cart</button>
                 <button className="icon-heart">Add To Favourites</button>
                 <NavLink to='/Cart' onClick={handleAddClothes} className='BuyNow'>
-                        Buy Now
+                    Buy Now
                 </NavLink>
+
 
             </div>
             <div className="aside__item">

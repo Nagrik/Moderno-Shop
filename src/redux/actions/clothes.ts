@@ -72,7 +72,6 @@ export const setClothesProduct = (clothes:any) => ({type:"SET_CLOTHES_PRODUCT", 
 export const setProfile = (items:Object) => ({
     type:'SET_AUTHOR',
     payload:items
-
 })
 
 export const fetchProfile = () => (dispatch:any) =>  {

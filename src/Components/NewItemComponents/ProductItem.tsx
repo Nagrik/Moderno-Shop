@@ -1,6 +1,6 @@
 import React from 'react'
 import RateStars from "../Products/RateStars";
-import {log} from "util";
+import {NavLink} from "react-router-dom";
 
 export interface IsProps  {
     author: any;
@@ -9,20 +9,20 @@ export interface IsProps  {
 
 export default function NewProductItem(props:  IsProps){
     // console.log(props.author)
+    const id = props.author.id - 1
     return(
-
             <div className="product__item">
-                <a href="#" className="product__item-img">
-                    <img src={props.imageUrl} alt='' className='product__item-img'/>
-                </a>
+                <NavLink to={'/NewProduct/' + id}>
+                    <img src={props.imageUrl} className='ProductsItemImage' alt='123'/>
+                </NavLink>
                 <div className="product__item-content">
                     <div className="product__item-name">
-                        <a href="#" className="product__item-title">
+                        <NavLink to={'/NewProduct/' + id} href="#" className="product__item-title">
                             {props.name}
-                        </a>
-                        <a className="product__item-category" href="#">
+                        </NavLink>
+                        <div className="product__item-category">
                             {props.category}
-                        </a>
+                        </div>
                         <div className="product__item-text">
                             Pimply dummy text of the printing and typesetting industry.
                         </div>
@@ -35,12 +35,12 @@ export default function NewProductItem(props:  IsProps){
                 </div>
 
                 <div className="product__item-info">
-                    <a className="product__item-author" href="#">
+                    <div className="product__item-author" >
                         <div className="avatar">
                             <img src={props.author.imageUrl} alt='' className="avatar"/>
                         </div>
                         <span>{props.author.name}</span>
-                    </a>
+                    </div>
                     <div className="product__item-star">
                         <RateStars rating={5}/>
                     </div>

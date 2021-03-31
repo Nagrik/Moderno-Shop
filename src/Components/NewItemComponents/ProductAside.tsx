@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const ProductsAside = ({items, onCLickAddClothes}: any) => {
-    let userId = items.author.id -1
+    let userId = items.author.id - 1
 
     const handleAddClothes = () => {
         const obj = {

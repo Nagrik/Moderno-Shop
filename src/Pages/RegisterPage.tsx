@@ -4,14 +4,9 @@ import {Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 import { NavLink } from 'react-router-dom';
+import {connect, useDispatch} from "react-redux";
+import {auth} from "../redux/actions/auth";
 
-interface Values {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password:any
-
-}
 
 
 const SignupSchema = Yup.object().shape({
@@ -30,39 +25,18 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
 });
 
-const  loginHandler = async (values:any, {setSubmitting}:any) => {
-    const payload = {
-        email:values.email,
-        password:values.password,
-        returnSecureToken:true,
-    }
-    try {
-        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAPwJZ37KJ1j_dgSa_LJryFhD9H2U7eB84', payload)
-        console.log(response.data)
-    }catch (e){
-        console.log(e)
-    }finally {
-        setSubmitting(false)
-    }
-}
 
-const registerHandler = async (values:any, {setSubmitting}:any) => {
-            const payload = {
-                    email: values.email,
-                    password: values.password,
-                    returnSecureToken: true
-    }
-    try {
-        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyAPwJZ37KJ1j_dgSa_LJryFhD9H2U7eB84', payload)
-        console.log(response.data)
-    }catch (e){
-        console.log(e)
-    }finally {
-        setSubmitting(false)
-    }
-}
-export const RegisterPage = () => {
-    // @ts-ignore
+
+ const RegisterPage = (props:any) => {
+
+     const registerHandler = async (values:any,  {setSubmitting}:any) => {
+         props.auth(
+             values.email,
+             values.password,
+             true,
+         )
+         setSubmitting(false)
+     }
     return (
         <div className="wrapper">
             <div className="content page-content">
@@ -78,7 +52,7 @@ export const RegisterPage = () => {
                             password:''
                         }}
                         validationSchema={SignupSchema}
-
+                    //@ts-ignore
                      onSubmit={registerHandler}
                     >
                         {(formik:any) => (
@@ -150,4 +124,12 @@ export const RegisterPage = () => {
         </div>
     );
 };
+
+function mapDispatchToProps(dispatch:any) {
+    return{
+        auth: (email:any,password:any, isLogin:any) => dispatch(auth(email, password, isLogin))
+    }
+}
+
+export default connect(null , mapDispatchToProps)(RegisterPage)
 

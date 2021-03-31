@@ -8,9 +8,10 @@ import axios from "axios";
 import NewProductPage from "../Pages/NewItemsProducts";
 import {setLoadedNewProduct, setNewProfile} from "../redux/actions/newItems";
 
-const ProductPageContainer = (props:any) => {
+const NewItemsPageContainer = (props:any) => {
 
     let clothesId = props.match.params.productId
+    console.log(clothesId)
 
 
     const dispatch = useDispatch()
@@ -21,15 +22,15 @@ const ProductPageContainer = (props:any) => {
 
     const selectLoading = ({clothes}:any) => clothes.isLoadedProduct
     const isLoadedProduct = useSelector(selectLoading)
-    console.log(isLoadedProduct)
 
 
 
 
     React.useEffect(() => {
-        dispatch(setLoadedNewProduct(false))
+        // @ts-ignore
+        dispatch(setLoadedProduct(false))
         axios.get(`https://modernoshop-b8052-default-rtdb.firebaseio.com/Clothes/${clothesId}.json`).then(({data}) => {
-            dispatch(setNewProfile(data))
+            dispatch(setProfile(data))
         })
     }, [])
     return (
@@ -42,4 +43,4 @@ const ProductPageContainer = (props:any) => {
     );
 };
 
-export default withRouter(ProductPageContainer) ;
+export default withRouter(NewItemsPageContainer) ;

@@ -220,7 +220,7 @@
 
 .circle__menu {
   position: absolute;
-  top: 62px;
+  top: 60px;
   z-index: 1;
   right: 0;
   border: 1px solid #e0e0e0;
@@ -318,6 +318,7 @@
 .circle__info-theme {
   font-size: 12px;
   color: $green;
+  width: 80px;
 }
 
 .circle__info-price {
@@ -3561,6 +3562,15 @@ $duration: 0.15s;
 
 .activeHeart{
   color: red;
+}
+
+.logout{
+  outline: none;
+  display: inline-block;
+  border-radius: 5px;
+  background: #ccc;
+  border: none;
+  padding: 5px 10px;
 }
 
 

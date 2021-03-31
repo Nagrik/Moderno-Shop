@@ -16,11 +16,13 @@ export default function NewItemPage({clothesItem}:any) {
         isLoaded:boolean,
         clothes:any
     }
-    const selectClothes = ({clothes}: RootState) => clothes.items
+    const selectClothes = ({aside}: RootState) => aside.mainItems
     const selectLoaded = ({aside}:RootState) => aside.isLoaded
 
     const items = useSelector(selectClothes)
     const isLoaded = useSelector(selectLoaded)
+    console.log(items)
+    console.log(isLoaded)
 
     React.useEffect(() => {
         // @ts-ignore

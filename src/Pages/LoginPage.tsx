@@ -4,6 +4,8 @@ import {Formik, Field, Form} from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 import { NavLink } from 'react-router-dom';
+import {auth} from "../redux/actions/auth";
+import {connect} from "react-redux";
 
 
 const SignupSchema = Yup.object().shape({
@@ -22,29 +24,28 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
 });
 
-const  loginHandler = async (values:any, {setSubmitting}:any) => {
-    const payload = {
-        email:values.email,
-        password:values.password,
-        returnSecureToken:true,
-    }
-    try {
-        const response = await axios.post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyAPwJZ37KJ1j_dgSa_LJryFhD9H2U7eB84', payload)
-        console.log(response.data)
-    }catch (e){
-        console.log(e)
-    }finally {
-        setSubmitting(false)
-    }
-}
 
-export const LoginPage = () => {
+
+const LoginPage = (props:any) => {
+    const  loginHandler = async (values:any, {setSubmitting}:any) => {
+        props.auth(
+            values.email,
+            values.password,
+            true,
+        )
+        try {
+        }catch (e){
+            console.log(e)
+        }finally {
+            setSubmitting(false)
+        }
+    }
     return (
         <div className="wrapper">
             <div className="content page-content">
                 <div className='Settings'>
                     <div className='settings-title'>
-                        <h1>Registration</h1>
+                        <h1>Log In</h1>
                     </div>
                     <Formik
                         initialValues={{
@@ -54,7 +55,7 @@ export const LoginPage = () => {
                             password:''
                         }}
                         validationSchema={SignupSchema}
-
+//@ts-ignore
                         onSubmit={loginHandler}
                     >
                         {(formik:any) => (
@@ -113,7 +114,7 @@ export const LoginPage = () => {
                                             //@ts-ignore
                                             ? <button type="submit" className='settings-button' onSubmit={loginHandler}>Login</button>
                                             : <button type="submit" className='settings-button-disabled'
-                                                      disabled>Register</button>
+                                                      disabled>Login</button>
                                     }
                                 </div>
                             </form>
@@ -124,4 +125,11 @@ export const LoginPage = () => {
         </div>
     );
 };
+function mapDispatchToProps(dispatch:any) {
+    return{
+        auth: (email:any,password:any, isLogin:any) => dispatch(auth(email, password, isLogin))
+    }
+}
+
+export default connect(null , mapDispatchToProps)(LoginPage)
 

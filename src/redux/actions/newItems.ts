@@ -42,7 +42,7 @@ export const setLoadedNewProduct = (payload:boolean) => ({
 
 export const fetchNewProfile = () => (dispatch:any) =>  {
     dispatch(setLoadedNewProduct(false))
-    axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/Clohtes/2.json').then(({data}) => {
+    axios.get('https://modernoshop-b8052-default-rtdb.firebaseio.com/Clohtes/.json').then(({data}) => {
         dispatch(setNewProfile(data))
     })
 }

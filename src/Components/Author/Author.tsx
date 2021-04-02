@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function Author(){
     return(
@@ -8,9 +9,9 @@ export default function Author(){
                     Over <span>20,000</span> Author
                     Are Involved Here!
                 </div>
-                <a href="#" className="author__link">
+                <NavLink to='/Registration' className="author__link">
                     Become a Author
-                </a>
+                </NavLink>
             </div>
         </section>
     )

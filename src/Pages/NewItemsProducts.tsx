@@ -2,8 +2,7 @@ import React from 'react'
 import Links from "../Components/ProductComponents/Links";
 import BreadCrumbsProduct from "../Components/ProductComponents/BreadCrumbsProduct";
 import {TabContentTitle} from "../Components/ProductComponents/TabContentTitle";
-import {addClothesToCart} from "../redux/actions/cart";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import ProductsAside from "../Components/NewItemComponents/ProductAside";
 
 export default function NewProductPage({clothesItem}:any) {

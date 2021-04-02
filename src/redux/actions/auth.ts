@@ -1,6 +1,9 @@
 import axios from "axios";
 
-export function auth(email: any, password: any, isLogin: any) {
+export const AUTH_LOGOUT = 'AUTH_LOGOUT'
+export const AUTH_SUCCESS = 'AUTH_SUCCESS'
+
+export function auth(email: string, password: any, isLogin: boolean) {
     return async (dispatch: any) => {
         const authData = {
             email, password,
@@ -17,7 +20,7 @@ export function auth(email: any, password: any, isLogin: any) {
 
         localStorage.setItem('token', data.idToken)
         localStorage.setItem('userId', data.localId)
-        //@ts-ignore
+        // @ts-ignore
         localStorage.setItem('expirationDate', expirationDate)
 
         dispatch(authSuccess(data.idToken))
@@ -36,16 +39,15 @@ export function autoLogout(time:number){
 export function logout(){
     localStorage.removeItem('token')
     localStorage.removeItem('userId')
-    //@ts-ignore
     localStorage.removeItem('expirationDate')
     return{
-        type:"AUTH_LOGOUT"
+        type:AUTH_LOGOUT
     }
 }
 
 export function authSuccess(token:any){
     return{
-        type: "AUTH_SUCCESS",
+        type: AUTH_SUCCESS,
         token
     }
 }

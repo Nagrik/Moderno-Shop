@@ -1,9 +1,7 @@
 import 'react-app-polyfill/ie11';
 import * as React from 'react';
-import {Formik, Field, Form} from 'formik';
+import {Formik, Field} from 'formik';
 import * as Yup from 'yup';
-import axios from "axios";
-import { NavLink } from 'react-router-dom';
 import {auth} from "../redux/actions/auth";
 import {connect} from "react-redux";
 

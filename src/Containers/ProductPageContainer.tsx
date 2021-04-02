@@ -18,7 +18,6 @@ const ProductPageContainer = (props:any) => {
 
     const selectLoading = ({clothes}:any) => clothes.isLoadedProduct
     const isLoadedProduct = useSelector(selectLoading)
-    console.log(isLoadedProduct)
 
 
 

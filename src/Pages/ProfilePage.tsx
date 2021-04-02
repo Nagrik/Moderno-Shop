@@ -38,14 +38,14 @@ export default function ProfilePage({author}:any) {
                                     </ul>
                                 </div>
                                 <ul className="footer__social-link">
-                                    <li><a className="link-facebook" href="#"/></li>
-                                    <li><a className="link-twitter" href="#"/></li>
-                                    <li><a className="link-youtube" href="#"/></li>
+                                    <li><a className="link-facebook" href="/"/></li>
+                                    <li><a className="link-twitter" href="/"/></li>
+                                    <li><a className="link-youtube" href="/"/></li>
                                 </ul>
 
                                 <div className="profile__aside-btn">
-                                    <a className="profile__aside-message" href="#">Send Message</a>
-                                    <a className="profile__aside-following" href="#">Following</a>
+                                    <a className="profile__aside-message" href="/">Send Message</a>
+                                    <a className="profile__aside-following" href="/">Following</a>
                                 </div>
 
                             </div>

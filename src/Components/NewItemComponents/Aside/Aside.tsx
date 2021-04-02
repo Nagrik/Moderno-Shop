@@ -1,5 +1,4 @@
 import React from 'react'
-import ProductsItem from "../../Products/ProductsItem";
 import AsideProductsItem from "./AsideProductItem";
 import {useDispatch, useSelector} from "react-redux";
 import {fetchProductsAsideItems} from "../../../redux/actions/newItems";
@@ -8,8 +7,7 @@ import CategoryAside from "../../Products/ProductsItem/CategoryAside";
 
 export default function Aside() {
     const dispatch = useDispatch()
-    // @ts-ignore
-    const asideItems = useSelector(({aside}) => aside.asideItems)
+    const asideItems = useSelector(({aside}:any) => aside.asideItems)
 
     React.useEffect(() => {
         dispatch(fetchProductsAsideItems())
@@ -30,7 +28,7 @@ export default function Aside() {
                         <AsideProductsItem key={Math.random()} {...obj} />))}
                 </div>
 
-                <a className="top-sellers__link" href="#">View All</a>
+                <a className="top-sellers__link" href="/">View All</a>
             </div>
         </aside>
     )

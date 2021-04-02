@@ -1,12 +1,10 @@
 import React from 'react'
-import RateStars from "../../Products/RateStars";
 
 export interface IsProps  {
     author: any;
     imageUrl:string; name:string; category:string, price:number
 }
 
-//@ts-ignore
 export default function AsideProductsItem(props:IsProps){
     return(
         <div className="product__item">

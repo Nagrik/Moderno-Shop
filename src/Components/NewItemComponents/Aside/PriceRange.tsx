@@ -1,7 +1,6 @@
 import React from 'react'
 import { Slider, InputNumber, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
-import CategoryAside from "../../Products/ProductsItem/CategoryAside";
 
 export default function PriceRange(){
     const [inputValue, setInputValue] = React.useState(1);
@@ -9,10 +8,6 @@ export default function PriceRange(){
         setInputValue(value)
     };
     return(
-        // state = {
-        //     inputValue: 1,
-        // };
-
         <div className="price-range aside__item">
             <div className="aside__title">
                 Price Range
@@ -23,7 +18,7 @@ export default function PriceRange(){
                         min={1}
                         max={100}
                         onChange={onChange}
-                        value={typeof inputValue === 'number' ? inputValue : 0}
+                        value={inputValue}
                     />
                 </Col>
                 <Col span={4}>

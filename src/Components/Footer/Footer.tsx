@@ -28,11 +28,11 @@ export default function Footer(){
                                 Join Our Community
                             </div>
                             <ul className="footer__col-list">
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Forums</a></li>
-                                <li><a href="#">Become an Author</a></li>
-                                <li><a href="#">Community Meetups</a></li>
-                                <li><a href="#">Become an Affiliate</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Forums</a></li>
+                                <li><a href="/">Become an Author</a></li>
+                                <li><a href="/">Community Meetups</a></li>
+                                <li><a href="/">Become an Affiliate</a></li>
                             </ul>
                         </div>
 
@@ -41,22 +41,22 @@ export default function Footer(){
                                 Need Help?
                             </div>
                             <ul className="footer__col-list">
-                                <li><a href="#">Help Center</a></li>
-                                <li><a href="#">Foxtar Market Terms</a></li>
-                                <li><a href="#">Author Terms</a></li>
-                                <li><a href="#">Foxtar Licenses</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="/">Help Center</a></li>
+                                <li><a href="/">Foxtar Market Terms</a></li>
+                                <li><a href="/">Author Terms</a></li>
+                                <li><a href="/">Foxtar Licenses</a></li>
+                                <li><a href="/">Contact Us</a></li>
                             </ul>
                         </div>
 
                         <div className="footer__col footer__col-social">
                             <div className="footer__col-title">Follow Us On</div>
                             <ul className="footer__social-link">
-                                <li><a className="link-facebook" href="#"/></li>
-                                <li><a className="link-twitter" href="#"/></li>
-                                <li><a className="link-youtube" href="#"/></li>
-                                <li><a className="link-linkidin" href="#"/></li>
-                                <li><a className="link-pinters" href="#"/></li>
+                                <li><a className="link-facebook" href="/"/></li>
+                                <li><a className="link-twitter" href="/"/></li>
+                                <li><a className="link-youtube" href="/"/></li>
+                                <li><a className="link-linkidin" href="/"/></li>
+                                <li><a className="link-pinters" href="/"/></li>
                             </ul>
 
                             <div className="footer__form">

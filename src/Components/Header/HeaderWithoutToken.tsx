@@ -42,7 +42,7 @@ const HeaderWithoutToken = () => {
                         </div>
 
                         <div className="header__text">
-                            <a href="#">
+                            <a href="/">
                                 <span>Need help?</span>
                             </a>
                             Talk to an expert:
@@ -51,7 +51,7 @@ const HeaderWithoutToken = () => {
 
                         <div className="header__box">
                             <div className="notification__box header__btn-login--off">
-                                <a className="notification header__circle active icon-bell" href="#">
+                                <a className="notification header__circle active icon-bell" href="/">
                                     <span>8</span>
                                 </a>
                                 <div className="circle__menu notification__menu">
@@ -64,7 +64,7 @@ const HeaderWithoutToken = () => {
                                         </div>
                                     </a>
 
-                                    <a href="#" className="circle__item icon-bell">
+                                    <a href="/" className="circle__item icon-bell">
                                         <img className="circle__img" src={mess2} alt=""/>
 
                                         <div className="circle__info">
@@ -73,7 +73,7 @@ const HeaderWithoutToken = () => {
                                         </div>
                                     </a>
 
-                                    <a href="#" className="circle__item icon-bell">
+                                    <a href="/" className="circle__item icon-bell">
                                         <img className="circle__img" src={mess3} alt=""/>
 
                                         <div className="circle__info">
@@ -85,11 +85,11 @@ const HeaderWithoutToken = () => {
                             </div>
 
                             <div className="message__box header__btn-login--off">
-                                <a className="message header__circle active icon-envelop" href="#">
+                                <a className="message header__circle active icon-envelop" href="/">
                                     <span>5</span>
                                 </a>
                                 <div className="circle__menu message__menu">
-                                    <a href="#" className="circle__item icon-envelop icons-color">
+                                    <a href="/" className="circle__item icon-envelop icons-color">
                                         <img className="circle__img" src={mess3} alt=""/>
 
                                         <div className="circle__info">
@@ -99,7 +99,7 @@ const HeaderWithoutToken = () => {
                                         </div>
                                     </a>
 
-                                    <a href="#" className="circle__item icon-envelop">
+                                    <a href="/" className="circle__item icon-envelop">
                                         <img className="circle__img" src={mess2} alt=""/>
 
                                         <div className="circle__info">
@@ -109,7 +109,7 @@ const HeaderWithoutToken = () => {
                                         </div>
                                     </a>
 
-                                    <a href="#" className="circle__item icon-undo2">
+                                    <a href="/" className="circle__item icon-undo2">
                                         <img className="circle__img" src={mess} alt=""/>
 
                                         <div className="circle__info">
@@ -123,7 +123,7 @@ const HeaderWithoutToken = () => {
 
 
                             <div className="basket__box">
-                                <a className="basket header__circle active icon-shopping-basket" href="#">
+                                <a className="basket header__circle active icon-shopping-basket" href="/">
                                     <span>{totalCount}</span>
                                 </a>
                                 <div className="circle__menu">
@@ -156,14 +156,14 @@ const HeaderWithoutToken = () => {
                                             </div>
                                         </div>
 
-                                        <NavLink to='/Cart' className="basket_btn" href="#">Go to Cart</NavLink>
-                                        <a className="basket_btn basket_btn-checkout" href="#">Go to Checkout</a>
+                                        <NavLink to='/Cart' className="basket_btn">Go to Cart</NavLink>
+                                        <a className="basket_btn basket_btn-checkout" href="/">Go to Checkout</a>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="user__box">
-                                <a className="user header__btn-login--off" href="#">
+                                <a className="user header__btn-login--off" href="/">
                                     <div className="user__inner">
                                         <div className="user__img">
                                             <img src={userPro} alt=""/>
@@ -181,20 +181,20 @@ const HeaderWithoutToken = () => {
 
                                 <div className="user__menu">
                                     <ul>
-                                        <li><a className="angle-right" href="#">Profile Page</a></li>
-                                        <li><a className="angle-right" href="#">Portfolio</a></li>
-                                        <li><a className="angle-right" href="#">Account Setting</a></li>
-                                        <li><a className="angle-right" href="#">Downloads</a></li>
-                                        <li><a className="angle-right" href="#">Wishlist</a></li>
-                                        <li><a className="angle-right" href="#">Upload Item</a></li>
-                                        <li><a className="angle-right" href="#">Statement</a></li>
-                                        <li><a className="angle-right" href="#">Withdraws</a></li>
+                                        <li><a className="angle-right" href="/">Profile Page</a></li>
+                                        <li><a className="angle-right" href="/">Portfolio</a></li>
+                                        <li><a className="angle-right" href="/">Account Setting</a></li>
+                                        <li><a className="angle-right" href="/">Downloads</a></li>
+                                        <li><a className="angle-right" href="/">Wishlist</a></li>
+                                        <li><a className="angle-right" href="/">Upload Item</a></li>
+                                        <li><a className="angle-right" href="/">Statement</a></li>
+                                        <li><a className="angle-right" href="/">Withdraws</a></li>
                                     </ul>
                                 </div>
                             </div>
 
                             <NavLink to='/Login' className="header__btn header__btn-login" data-fancybox data-src="#modal">Login</NavLink>
-                            <a className="header__btn header__btn-logout header__btn-login--off" href="#">Logout</a>
+                            <a className="header__btn header__btn-logout header__btn-login--off" href="/">Logout</a>
                             <NavLink to='/Registration' className="header__btn header__btn-register">Register</NavLink>
                         </div>
 

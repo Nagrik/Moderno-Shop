@@ -50,7 +50,7 @@ export default class Comments extends React.Component {
                 comments: [
                     ...this.state.comments,
                     {
-                        author: 'Han Solo',
+                        author: 'Roman Nahryshko',
                         avatar: 'https://avatars.githubusercontent.com/u/69323644?s=460&u=c264346a04cf8bd9c088760d732435073315b209&v=4',
                         content: <p>{this.state.value}</p>,
                         datetime: moment().fromNow(),

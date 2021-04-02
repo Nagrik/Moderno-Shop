@@ -1,7 +1,7 @@
 import React from 'react';
 import ProfilePage from "../Pages/ProfilePage";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchProfile, setLoadedProduct, setProfile} from "../redux/actions/clothes";
+import { setLoadedProduct, setProfile} from "../redux/actions/clothes";
 import PlaceholderItems from "../Components/Products/ProductsItem/PlaceholderItems";
 import axios from "axios";
 import { withRouter } from 'react-router-dom';

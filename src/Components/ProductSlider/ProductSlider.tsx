@@ -32,10 +32,7 @@ export default function ProductsSlider() {
     const selectClothesThree = ({clothes}:RootState) => clothes.sliderThird
     const sliderItemsThree = useSelector(selectClothesThree)
 
-    const selectAuthor = ({clothes}:any) => clothes.author
-    const author = useSelector(selectAuthor)
     React.useEffect(() => {
-        // @ts-ignore
         dispatch(fetchClothesSliderOne())
         dispatch(fetchClothesSliderTwo())
         dispatch(fetchClothesSliderThird())

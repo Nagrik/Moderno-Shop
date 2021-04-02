@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import RateStars from "../Products/RateStars";
 
 
 type PropTypes = {

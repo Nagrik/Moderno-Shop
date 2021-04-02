@@ -3,8 +3,7 @@ import Links from "../Components/ProductComponents/Links";
 import BreadCrumbsProduct from "../Components/ProductComponents/BreadCrumbsProduct";
 import {TabContentTitle} from "../Components/ProductComponents/TabContentTitle";
 import ProductsAside from "../Components/Products/ProductsAside";
-import {addClothesToCart} from "../redux/actions/cart";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 
 export default function ProductPage({clothesItem}:any) {
     const dispatch = useDispatch()

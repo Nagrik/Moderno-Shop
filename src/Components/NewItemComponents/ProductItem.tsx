@@ -45,7 +45,7 @@ export default function NewProductItem(props:  IsProps){
                         <RateStars rating={5}/>
                     </div>
                     <div className="product__item-list">
-                        <a className="icon-bubble2" href="#">(<span>10</span>)</a>
+                        <a className="icon-bubble2" href="/">(<span>10</span>)</a>
                         <div className="icon-heart">(<span>20</span>)</div>
                     </div>
                 </div>

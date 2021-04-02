@@ -1,5 +1,4 @@
 import React from 'react'
-import first from "../../img/Carousel/1.jpg";
 import {NavLink} from "react-router-dom";
 
 type PropTypes = {

@@ -189,7 +189,7 @@
   border: 1px solid rgb(204, 204, 204);
   position: absolute;
   background: #fff;
-  padding: 0px 20px;
+  padding: 0 20px;
   width: 158px;
   transition: all .3s;
   height: 0;
@@ -285,9 +285,6 @@
 .circle__item {
   background-color: #fff;
   border: 1px solid #e0e0e0;
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-top: none;
   padding: 0 23px;
   transition: all .3s;
   display: flex;
@@ -472,7 +469,7 @@
     @include f700;
     color: #000;
     text-align: center;
-    box-shadow: 0px 1px 2px 0px rgba(118, 174, 54, 0.75);
+    box-shadow: 0 1px 2px 0 rgba(118, 174, 54, 0.75);
   }
 }
 
@@ -551,7 +548,7 @@
     input {
       display: block;
       width: 100%;
-      box-shadow: 0px 1px 10px 0px rgb(81, 75, 75);
+      box-shadow: 0 1px 10px 0 rgb(81, 75, 75);
       border-radius: 4px;
       height: 56px;
       border: none;
@@ -642,7 +639,7 @@
   text-align: center;
   margin-left: 20px;
   margin-bottom: 30px;
-  box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+  box-shadow: 0 1px 2px 0 rgba(205, 214, 222, 0.75);
 
   &-img {
     height: 250px;
@@ -729,7 +726,7 @@
 
   button {
     margin: 45px 5px 0;
-    box-shadow: 0px 1px 3px 0px rgba(204, 216, 228, 0.75);
+    box-shadow: 0 1px 3px 0 rgba(204, 216, 228, 0.75);
     border: none;
     background-color: #fff;
     color: $bg;
@@ -747,7 +744,7 @@
 
 /*Products-Slider*/
 .product-slider {
-  padding: 70px 0px 120px;
+  padding: 70px 0 120px;
 
   .slick-dots {
     text-align: center;
@@ -1083,7 +1080,7 @@
     &::before {
       content: '\e949';
       position: absolute;
-      font-family: 'icomoon';
+      font-family: 'icomoon', serif;
       color: #fff;
       font-size: 20px;
       top: 10px;
@@ -1138,11 +1135,10 @@
   padding-top: 10px;
 
   li {
-    padding: 10px 0;
+    padding: 10px 0 20px 0;
     display: flex;
     justify-content: space-between;
     position: relative;
-    padding-left: 20px;
   }
 
   a {
@@ -1235,7 +1231,7 @@
   padding: 0;
   text-shadow: none;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .irs--flat .irs-handle {
@@ -1427,7 +1423,7 @@ button.icon-move-vertical-alt1 {
 
   a,
   span {
-    box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+    box-shadow: 0 1px 2px 0 rgba(205, 214, 222, 0.75);
     width: 38px;
     height: 43px;
     display: flex;
@@ -1674,7 +1670,7 @@ button.icon-move-vertical-alt1 {
   background-color: #fff;
   height: 90px;
   align-items: center;
-  box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75)
+  box-shadow: 0 1px 2px 0 rgba(205, 214, 222, 0.75)
 }
 
 .productmini_img {
@@ -1772,7 +1768,7 @@ button.icon-move-vertical-alt1 {
 .product__price {
   button {
     margin-bottom: 7px;
-    box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+    box-shadow: 0 1px 2px 0 rgba(69, 90, 100, 0.75);
     border: none;
     background-color: $text;
     color: #fff;
@@ -2249,7 +2245,6 @@ button.icon-move-vertical-alt1 {
     max-width: 540px;
     width: 100%;
     background-color: #f9f9f9;
-    color: #000;
     border: 1px solid #dedede;
     padding: 10px;
     color: #707070;
@@ -2321,14 +2316,13 @@ button.icon-move-vertical-alt1 {
   @include f500;
   background-color: $text;
   padding: 18px 10px;
-  box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+  box-shadow: 0 1px 2px 0 rgba(69, 90, 100, 0.75);
   position: relative;
 
   &::before {
     position: absolute;
     content: '\e945';
     font-family: 'icomoon';
-    position: absolute;
     left: 53px;
     top: 16px;
     font-size: 17px;
@@ -2342,7 +2336,7 @@ button.icon-move-vertical-alt1 {
   color: #fff;
   @include f700;
   background-color: $green;
-  box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+  box-shadow: 0 1px 2px 0 rgba(69, 90, 100, 0.75);
   padding: 18px 10px;
 }
 
@@ -2415,7 +2409,6 @@ button.icon-move-vertical-alt1 {
         color: $green;
         font-size: 14px;
         font-family: 'icomoon';
-        color: #d0d0d0;
       }
     }
   }
@@ -2566,7 +2559,7 @@ button.icon-move-vertical-alt1 {
     border: 1px solid #d7d7d7;
     height: 40px;
     background-color: #f9f9f9;
-    padding: 0px 18px;
+    padding: 0 18px;
     color: #444;
 
     &::placeholder {
@@ -2593,7 +2586,6 @@ button.icon-move-vertical-alt1 {
     line-height: 26px;
     padding: 0 12px;
     border: 1px solid #d7d7d7;
-    border-left: 1px solid #d7d7d7;
     background: #fff;
     box-shadow: none;
     text-shadow: none;
@@ -2602,8 +2594,7 @@ button.icon-move-vertical-alt1 {
 
   .jq-file {
     width: 100%;
-    padding: 0px 18px;
-    border-right: 0px;
+    padding: 0 18px;
     box-shadow: none;
     border: 1px solid #d7d7d7;
     height: 40px;
@@ -2617,7 +2608,7 @@ button.icon-move-vertical-alt1 {
     margin-left: 100px;
     padding: 0;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     border-bottom-color: transparent;
     background: transparent;
     box-shadow: none;
@@ -2635,8 +2626,7 @@ button.icon-move-vertical-alt1 {
     height: 40px;
     padding: 0 10px;
     border: 1px solid #d7d7d7;
-    border-bottom-color: #d7d7d7;
-    border-radius: 0px;
+    border-radius: 0;
     background: #f9f9f9;
     box-shadow: none;
     font-family: 'Roboto-Regular', sans-serif;
@@ -2725,7 +2715,7 @@ button.icon-move-vertical-alt1 {
     border: 1px solid #d7d7d7;
     height: 40px;
     background-color: #f9f9f9;
-    padding: 0px 18px;
+    padding: 0 18px;
     color: #444;
 
     &::placeholder {
@@ -2733,16 +2723,12 @@ button.icon-move-vertical-alt1 {
     }
   }
 
-  .jq-selectbox {
-    width: 100%;
-  }
 
   .jq-selectbox__select {
     height: 40px;
     padding: 0 10px;
     border: 1px solid #d7d7d7;
-    border-bottom-color: #d7d7d7;
-    border-radius: 0px;
+    border-radius: 0;
     background: #f9f9f9;
     box-shadow: none;
     font-family: 'Roboto-Regular', sans-serif;
@@ -2836,9 +2822,7 @@ button.icon-move-vertical-alt1 {
   background-color: grey;
 }
 
-.slick-dots slick-dots-bottom {
-  padding-top: 20px;
-}
+
 
 .ant-row {
   padding-top: 20px !important;
@@ -2952,7 +2936,7 @@ button.icon-move-vertical-alt1 {
     font-family: 'icomoon';
     color: #8bc34a;
     position: absolute;
-    left: 0;
+    left: -20px;
     font-size: 14px;
   }
 }
@@ -3408,10 +3392,6 @@ $duration: 0.15s;
       color: #777777;
     }
 
-    icon {
-      position: relative;
-      top: 2px;
-    }
 
     img {
       display: block;
@@ -3442,7 +3422,7 @@ $duration: 0.15s;
 
 .BuyNow{
   margin-bottom: 7px;
-  box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+  box-shadow: 0 1px 2px 0 rgba(69, 90, 100, 0.75);
   border: none;
   background-color: $text;
   color: #fff;
@@ -3571,6 +3551,13 @@ $duration: 0.15s;
   background: #ccc;
   border: none;
   padding: 5px 10px;
+}
+
+.category-new{
+  width: 150px;
+  background: white;
+  padding: 10px 15px;
+  margin-left: 15px;
 }
 
 

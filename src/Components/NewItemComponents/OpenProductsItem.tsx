@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import user from '../../img/user.jpg'
 import RateStars from "../Products/RateStars";
 import {HeartOutlined, MessageOutlined} from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 
 export interface IsProps  {
     author: any;
-    imageUrl:string; name:string; category:string, items:any, id:number
+    imageUrl:string; name:string; category:string, items:any, id:number, price:number
 }
 
 export default function OpenProductItems(props:IsProps) {
@@ -34,7 +33,7 @@ export default function OpenProductItems(props:IsProps) {
                             <div className='Content__title'>{props.name}</div>
                             <div className='Content__subtitle'>{props.category}</div>
                         </div>
-                        <div className='Price'>$19</div>
+                        <div className='Price'>$ {props.price}</div>
                     </div>
                     <div className='Caption'>
                         <div className='Caption__text'>Lorem ipsum dolor sit amet, consectetur.</div>

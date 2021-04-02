@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {setCategory} from '../../redux/actions/filters'
 import {fetchClothes, fetchProfile} from "../../redux/actions/clothes";
 import PlaceholderItems from "./ProductsItem/PlaceholderItems";
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 interface RootState {
     clothes: any
@@ -64,8 +64,8 @@ export default function Products() {
 
                     </div>
                     <div className="products__button-btn">
-                        <button type="button" data-filter=".category-new">All New Items</button>
-                        <button type="button" data-filter=".category-popular">Popular Items</button>
+                        <NavLink to='/Products' className='category-new'>All New Items</NavLink>
+                        <NavLink to='/Products' className='category-new'>Popular Items</NavLink>
                     </div>
                 </div>
             </div>

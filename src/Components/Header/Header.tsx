@@ -3,13 +3,11 @@ import logo from "../../img/logo.png";
 import mess from "../../img/basket/mess.jpg";
 import mess2 from "../../img/basket/mass2.jpg";
 import mess3 from "../../img/basket/mass3.jpg";
-import bassket from "../../img/basket/basket_git.png";
-import bassketTelegram from "../../img/basket/basket_telegram.png";
 import userPro from "../../img/user-pro.jpg";
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import CartHoverItems from "./cartHover";
-import {clearCart, minusCartItem, plusCartItem, removeCartItem} from "../../redux/actions/cart";
+import { minusCartItem, plusCartItem, removeCartItem} from "../../redux/actions/cart";
 import HeaderWithoutToken from "./HeaderWithoutToken";
 
 export default function Header(){
@@ -51,7 +49,7 @@ export default function Header(){
                             </div>
 
                             <div className="header__text">
-                                <a href="#">
+                                <a href="/" >
                                     <span>Need help?</span>
                                 </a>
                                 Talk to an expert:
@@ -64,7 +62,7 @@ export default function Header(){
                                         <span>8</span>
                                     </a>
                                     <div className="circle__menu notification__menu">
-                                        <a href="#" className="circle__item icon-bell icons-color">
+                                        <a href="/" className="circle__item icon-bell icons-color">
                                             <img className="circle__img" src={mess} alt=""/>
 
                                             <div className="circle__info">
@@ -73,7 +71,7 @@ export default function Header(){
                                             </div>
                                         </a>
 
-                                        <a href="#" className="circle__item icon-bell">
+                                        <a href="/" className="circle__item icon-bell">
                                             <img className="circle__img" src={mess2} alt=""/>
 
                                             <div className="circle__info">
@@ -82,7 +80,7 @@ export default function Header(){
                                             </div>
                                         </a>
 
-                                        <a href="#" className="circle__item icon-bell">
+                                        <a href="/" className="circle__item icon-bell">
                                             <img className="circle__img" src={mess3} alt=""/>
 
                                             <div className="circle__info">
@@ -94,11 +92,11 @@ export default function Header(){
                                 </div>
 
                                 <div className="message__box">
-                                    <a className="message header__circle active icon-envelop" href="#">
+                                    <a className="message header__circle active icon-envelop" href="/">
                                         <span>5</span>
                                     </a>
                                     <div className="circle__menu message__menu">
-                                        <a href="#" className="circle__item icon-envelop icons-color">
+                                        <a href="/" className="circle__item icon-envelop icons-color">
                                             <img className="circle__img" src={mess3} alt=""/>
 
                                             <div className="circle__info">
@@ -107,7 +105,7 @@ export default function Header(){
                                             </div>
                                         </a>
 
-                                        <a href="#" className="circle__item icon-envelop">
+                                        <a href="/" className="circle__item icon-envelop">
                                             <img className="circle__img" src={mess2} alt=""/>
 
                                             <div className="circle__info">
@@ -116,7 +114,7 @@ export default function Header(){
                                             </div>
                                         </a>
 
-                                        <a href="#" className="circle__item icon-undo2">
+                                        <a href="/" className="circle__item icon-undo2">
                                             <img className="circle__img" src={mess} alt=""/>
 
                                             <div className="circle__info">
@@ -129,7 +127,7 @@ export default function Header(){
 
 
                                 <div className="basket__box">
-                                    <a className="basket header__circle active icon-shopping-basket" href="#">
+                                    <a className="basket header__circle active icon-shopping-basket" href="/">
                                         <span>{totalCount}</span>
                                     </a>
                                     <div className="circle__menu">
@@ -189,14 +187,14 @@ export default function Header(){
 
                                     <div className="user__menu">
                                         <ul>
-                                            <li><a className="angle-right" href="#">Profile Page</a></li>
-                                            <li><a className="angle-right" href="#">Portfolio</a></li>
-                                            <li><a className="angle-right" href="#">Account Setting</a></li>
-                                            <li><a className="angle-right" href="#">Downloads</a></li>
-                                            <li><a className="angle-right" href="#">Wishlist</a></li>
-                                            <li><a className="angle-right" href="#">Upload Item</a></li>
-                                            <li><a className="angle-right" href="#">Statement</a></li>
-                                            <li><a className="angle-right" href="#">Withdraws</a></li>
+                                            <li><a className="angle-right" href="/">Profile Page</a></li>
+                                            <li><a className="angle-right" href="/">Portfolio</a></li>
+                                            <li><a className="angle-right" href="/">Account Setting</a></li>
+                                            <li><a className="angle-right" href="/">Downloads</a></li>
+                                            <li><a className="angle-right" href="/">Wishlist</a></li>
+                                            <li><a className="angle-right" href="/">Upload Item</a></li>
+                                            <li><a className="angle-right" href="/">Statement</a></li>
+                                            <li><a className="angle-right" href="/">Withdraws</a></li>
                                         </ul>
                                     </div>
                                 </div>

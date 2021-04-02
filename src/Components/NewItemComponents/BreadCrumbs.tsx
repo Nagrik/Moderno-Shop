@@ -13,7 +13,7 @@ export default function BreadCrumbs(){
                         <Breadcrumb>
                             <Breadcrumb.Item>Home</Breadcrumb.Item>
                             <Breadcrumb.Item>
-                                <a href="">Products</a>
+                                <a href="/">Products</a>
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     </div>
